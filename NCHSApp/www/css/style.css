@@ -1,0 +1,16 @@
+.header{
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+.butto{
+	height: 40px;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #d1000f;
+}
+.spacer{
+	height: 8px;
+	background-color: transparent;
+}
