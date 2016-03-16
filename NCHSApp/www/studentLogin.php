@@ -23,6 +23,7 @@
       		<input type="submit" value="Log In" style="border: none; width: 80%; height: 60px; background-color: #bf1d32; color: white; border-radius: 30px; text-align: center; margin-left: auto; margin-right: auto;">
       		<br>
       		<br>
+            <a href="newUser.php">Need an account? Click Here!</a>
 		</div>
     </form>
 	</body>

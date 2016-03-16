@@ -7,7 +7,7 @@
   {
     //if ($Type=="S")
     //{
-  	    echo "<a href='studentHome.php' style='text-decoration: none;'><div style='margin-left: auto; margin-right: auto; margin-top: 50%; background-color: #ed3132; border-radius: 15px; height: 30px; width: 80%; text-align: center; font-size: 15px; color: black;'>Success! Click Here to Go To Your Home Page</div></a>";
+  	    echo "<a href='studentHome.php' style='text-decoration: none;'><div style='margin-left: auto; margin-right: auto; margin-top: 50%; background-color: #ed3132; border-radius: 15px; height: 100px; width: 80%; text-align: center; font-size: 40px; color: black;'>Success! Click Here to Go To Your Home Page</div></a>";
     //}
     //elseif ($Type=="T")
     //{
@@ -18,7 +18,7 @@
   {
     //if ($Type=="S")
     //{
-        echo "<a href='studentLogin.php' style='text-decoration: none;'><div style='margin-left: auto; margin-right: auto; margin-top: 50%; background-color: #ed3132; border-radius: 15px; height: 30px; width: 80%; text-align: center; font-size: 15px; color: black;'>Login Failed! Click Here To Go Back To Login Page</div></a>";
+        echo "<a href='studentLogin.php' style='text-decoration: none;'><div style='margin-left: auto; margin-right: auto; margin-top: 50%; background-color: #ed3132; border-radius: 15px; height: 100px; width: 80%; text-align: center; font-size: 40px; color: black;'>Login Failed! Click Here To Go Back To Login Page</div></a>";
     //}
     //elseif ($Type=="T")
     //{
