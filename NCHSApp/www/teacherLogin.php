@@ -11,7 +11,7 @@
 	<body bgcolor="#ebebeb">
     <img src="img/nclogo.jpg" width="100%" height="auto">
     <form action="login.php" method="post">
-        <input type="hidden" name="Type" value="S">
+        <input type="hidden" name="Type" value="T">
 		<div style="margin-top: 40%; margin-bottom: 50%; margin-left: auto; margin-right: auto; border-radius: 15px; width: 80%; height: auto; background-color: white; text-align: center;">
             <br>
       		<br>
