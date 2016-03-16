@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,6 +8,20 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="cordova.js"></script>
+    <script>
+      function dropDown(ID)
+      {
+        var current = document.getElementById(ID).style.display;
+        if (current=="none")
+        {
+          document.getElementById(ID).style.display = "block";
+        }
+        else if(current="block")
+        {
+          document.getElementById(ID).style.display = "none"
+        }
+      }
+    </script
   </head>
   <body bgcolor="#2d2d2d">
     <div class="header">
@@ -17,8 +30,13 @@
     <br>
     <br>
     <br>
-    <div class="butto">Button</div>
-    <div class="spacer">i</div>
+    <div class="butto"><button onclick='dropDown("classes")'>Classes</button></div>
+    <div id="classes" style="width: 95%; height: auto; display: none; text-align: center;">
+      <a href="classes.php">
+        <div style="width: 98%; height: 30px; background-color: #666666; color: white;">Calculus</div>
+      </a>
+    </div>
+    <br>
     <div class="butto">i</div>
     <div class="spacer">i</div>
     <div class="butto">i</div>
