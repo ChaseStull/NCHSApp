@@ -16,7 +16,7 @@
       		<br>
 			<input type="text" name="Username" placeholder="Enter Your 6 Digit Student ID" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
 			<br>
-			<input type="text" name="IDConfirm" placeholder="Confirm Username" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
+			<input type="text" name="IDConfirm" placeholder="Confirm Student ID" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
       		<br>
             <input type="password" name="Password" placeholder="Password" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
       		<br>
