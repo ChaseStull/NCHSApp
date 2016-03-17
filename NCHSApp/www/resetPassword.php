@@ -4,11 +4,9 @@
     $NewPass = $_POST["newPassword"];
     $NewPassConfirm = $_POST["newPasswordConfirm"];
     $fileToOpen = sha1($SID).".txt";
-
     $oldPassRecord = file_get_contents(sha1($SID).".txt"));
-
-
-
+    if (file_exists($fileToOpen))
+    {
     if ()
     {
         echo "<a href='studentLogin.php' style='text-decoration: none;'><div style='margin-left: auto; margin-right: auto; margin-top: 50%; background-color: #ed3132; border-radius: 75px; height: 150px; width: 80%; text-align: center; font-size: 40px; color: black;'><br>Success! Tap here to go to the login page</div></a>";
