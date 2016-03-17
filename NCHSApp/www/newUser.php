@@ -18,6 +18,8 @@
 			<br>
 			<input type="text" name="IDConfirm" placeholder="Confirm Student ID" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
       		<br>
+            <input type="text" name="email" placeholder="E-Mail Address" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
+      		<br>
             <input type="password" name="Password" placeholder="Password" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
       		<br>
             <input type="password" name="PasswordConfirm" placeholder="Confirm Password" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
