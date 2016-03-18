@@ -18,14 +18,13 @@
 			<input type="text" name="Username" placeholder="Student ID" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
 			<br>
 			<input type="password" name="Password" placeholder="Password" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
-      		<br>
+      		<a href="forgotPassword.php">Forgot Your Password?</a>
+            <br>
       		<br>
       		<input type="submit" value="Log In" style="border: none; width: 80%; height: 60px; background-color: #bf1d32; color: white; border-radius: 30px; text-align: center; margin-left: auto; margin-right: auto;">
       		<br>
       		<br>
             <a href="newUser.php">Need an account? Tap Here!</a>
-            <br>
-            <a href="forgotPassword.php">Forgot Password? Tap Here!</a>
             <br>
             <a href="password.php">Reset Passwowrd Here!</a>
 		</div>
