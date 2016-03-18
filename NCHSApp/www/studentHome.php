@@ -30,10 +30,10 @@
     <br>
     <br>
     <br>
-    <div class="butto"><button onclick='dropDown("classes")'>Classes</button></div>
+    <div class="butto"><br><button onclick='dropDown("classes")'>Classes</button></div>
     <div id="classes" style="width: 95%; height: auto; display: none; text-align: center;">
       <a href="classes.php">
-        <div style="width: 98%; height: 30px; background-color: #666666; color: white;">Calculus</div>
+        <div style="align: center; width: 90%; height: 30px; background-color: #666666; color: white;">Calculus</div>
       </a>
     </div>
     <br>

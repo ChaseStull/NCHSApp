@@ -15,7 +15,7 @@
 		<div style="margin-top: 40%; margin-bottom: 50%; margin-left: auto; margin-right: auto; border-radius: 15px; width: 80%; height: auto; background-color: white; text-align: center;">
             <br>
       		<br>
-			<input type="text" name="Username" placeholder="6-Digit Student ID" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
+			<input type="text" name="Username" placeholder="Student ID" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
 			<br>
 			<input type="password" name="Password" placeholder="Password" style="width: 80%; height: 30px; background-color: black; color: white; border-radius: 15px; text-align: center; margin-left: auto; margin-right: auto;">
       		<br>
@@ -25,7 +25,9 @@
       		<br>
             <a href="newUser.php">Need an account? Tap Here!</a>
             <br>
-            <a href="password.php">Reset Password Here!</a>
+            <a href="forgotPassword.php">Forgot Password? Tap Here!</a>
+            <br>
+            <a href="password.php">Reset Passwowrd Here!</a>
 		</div>
     </form>
 	</body>

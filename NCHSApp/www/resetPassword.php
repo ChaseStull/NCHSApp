@@ -11,7 +11,8 @@
         if ((sha1($OldPass)==$oldPassRecord)&&($NewPass==$NewPassConfirm))
         {
             $file = fopen($fileToOpen, "w");
-            fwrite($file, $NewPassConfirm);
+            $New = sha1($NewPassConfirm);
+            fwrite($file,$New);
             fclose($file);
 
             echo "<a href='studentLogin.php' style='text-decoration: none;'><div style='margin-left: auto; margin-right: auto; margin-top: 50%; background-color: #ed3132; border-radius: 75px; height: 150px; width: 80%; text-align: center; font-size: 40px; color: black;'><br>Reset Successful! Tap here to go to the login page</div></a>";
