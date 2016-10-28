@@ -1,0 +1,310 @@
+.header{
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+.butto{
+	height: 40px;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #d1000f;
+}
+.spacer{
+	height: 8px;
+	background-color: transparent;
+}
+
+.UI{
+    width: 80%;
+    height: 30px;
+    background-color: black;
+    color: white; border: none;
+    border-radius: 3px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.UI:focus{
+    -moz-box-shadow: inset 0 0 3px #bf1d32, 0 0 9px #bf1d32 !important;
+    -webkit-box-shadow: inset 0 0 3px #bf1d32, 0 0 9px #bf1d32 !important;
+    box-shadow: inset 0 0 3px #bf1d32, 0 0 9px #bf1d32 !important;
+}
+
+.UILogin{
+    border: none;
+    width: 70%;
+    height: 40px;
+    background-color: #bf1d32;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container{
+    text-align: center;
+    margin-top: 10%;
+    overflow: hidden;
+    background-color: transparent;
+    height: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.LoginContainer{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    width: 30%;
+    min-height: 250px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logo{
+    margin-left: 25%;
+    width: 50%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.optionContainer{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.teacherOption{
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 250px;
+    border-radius: 3px;
+    height: 250px;
+    font-size: 60px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.middle{
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.noDec{
+    text-decoration: none;
+    color: black;
+}
+
+.add{
+    height: 75px;
+    width: 75px;
+    opacity: 0.5;
+}
+
+.rm {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    background-color: #bf1d32;
+    border-radius: 3px;
+    height: 50px;
+    width: 30%;
+    color: black;
+    text-align: center;
+}
+div a div span:hover {
+    background-color: #bf1d32;
+    color: #ffffff;
+}
+.teacherOption:hover {
+    background-color: black;
+    color: white;
+}
+
+input:invalid {
+    border-color: #bf1d32;
+    border-width: 3px;
+}
+.hidden {
+    display: none;
+}
+
+#wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#leave-room {
+    margin-bottom: 10px;
+    float: right;
+}
+
+#user-container {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#main-container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#messages {
+    height: 300px;
+    width: 500px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: left;
+    overflow-y: scroll;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#msg-container {
+    padding-top: 20px;
+    width: 510px;
+}
+
+#msg {
+    width: 400px;
+}
+
+.user {
+    font-weight: bold;
+}
+
+.msg {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.time {
+    float: right;
+    color: #939393;
+    font-size: 13px;
+}
+
+.details {
+    margin-top: 20px;
+}
+.sendButton {
+    width: 50px;
+    height: 30px;
+    color: white;
+    background-color: #bf1d32;
+    border: none;
+    border-radius: 3px;
+}
+.errorMessage {
+    color: #bf1d32;
+    font-family: sans-serif;
+}
+
+.sidebar {
+    width: 95%;
+    background-color: white;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    height: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    scrollbar-3dlight-color: #000000;
+    scrollbar-arrow-color: #ffffff;
+    scrollbar-base-color: #bf1d32;
+    scrollbar-darkshadow-color: #111111;
+    margin-top: 0px;
+}
+
+.sideHead {
+    width: 95%; 
+    background-color: black;
+    color: white;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+}
+
+.note {
+    width: 90%;
+    height: 80px;
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: small;
+}
+
+.note:hover {
+    background-color: white;
+    color: black;
+}
+.invisible{
+    border: none;
+    background-color: transparent;
+}
+.result{
+    width: 95%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    border: none;
+}
+.result:hover{
+    background-color: #bbb
+}
+.userInfo{
+	border-bottom: 1px black;
+	width: 95%;
+	height: auto;
+    background-color: black;
+    border-radius: 2px;
+    color: white;
+    padding: 3px;
+}
+.ui-btn:focus {
+
+
+   -webkit-box-shadow: 0 0 12px     #bf1d32 !important;
+
+
+    -moz-box-shadow: 0 0 12px         #bf1d32 !important;
+
+
+    box-shadow: 0 0 12px             #bf1d32 !important;
+
+
+}
+button{
+    -webkit-appearance: none;
+}
+.cancel:hover{
+    background-color: #444;
+}
+.cancel{
+    line-height: 50%;
+    float: left;
+    width: 45%;
+    height: 40px;
+    background-color: #b1b1b1;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.UILogin:hover{
+    background-color: white;
+    color: #bf1d32;
+    border: 2px solid #bf1d32;
+}
