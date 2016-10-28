@@ -27,7 +27,7 @@
             <link rel='stylesheet' type='text/css' href='css/style.css'>
             <meta charset='utf-8'>
 		</head>
-		<body>
+		<body style='background-color: #ebebeb;'>
 			<div style='width: 100%; background-color: white; overflow: hidden; height: 50px;'>
                 <div style='float: left;'>
                     <b>Welcome, ".$_COOKIE["Student"]."</b>
@@ -54,7 +54,7 @@
 			<div style='width: 100%; height: 100%; position: fixed; background-color: transparent;'>
 				<div style='width: 20%; height: 100%; background-color: white; float: left;>
 					<br>
-					<span>Conversations<span>
+					<span>Conversations</span>
 					".$threads."
 				</div>
 			</div>
