@@ -321,7 +321,8 @@
                         <input name='query' type='text' placeholder='Enter Student Number' class='UI' style='margin-left: auto; margin-right: auto; width: 75%;'>
                         <input type='submit' value='Search' style='width: 23%; border: none; background-color: #bf1d32; color: white;'>
                     </form>
-						<form action='ssresults.php' method='get' style='background-color: #bf1d32;'>
+						<form action='studentSearch.php' method='get' style='background-color: #bf1d32;'>
+                            <input type='hidden' name='io' value='true'>
 							<input type='hidden' name='query' value='1234567890'>
 							<input type='submit' value='Show All' style='text-align: center; width: 100%; background-color: #bf1d32; color: white; border: none;'>
 						</form>

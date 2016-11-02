@@ -1,3 +1,17 @@
+<?php
+    if(isset($_COOKIE["Student"]))
+    {
+        echo "<script>window.onload = window.location.assign(\"studentHome.php\");</script>";
+    }
+    else if(isset($_COOKIE["Teacher"]))
+    {
+        echo "<script>window.onload = window.location.assign(\"teacherHome.php\");</script>";
+    }
+    else if(isset($_COOKIE["User"]))
+    {
+        echo "<script>window.onload = window.location.assign(\"adminHome.php\");</script>";
+    }
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -71,15 +85,16 @@
                 $cookie_name = "User";
                 if((isset($_COOKIE[$cookie_name])==TRUE)&&($_COOKIE[$cookie_name]!=NULL))
                 {
-                    echo "<a href='aHome.php' style='text-decoration: none; color: black;'><img id='t' src='img/teacher-feature-science-2-640.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm An Admin</b></p><br></a>";
+                    echo "<a href='aHome.php' style='text-decoration: none; color: black;'><img id='t' src='img/photo.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm An Admin</b></p><br></a>";
                 }
                 else
                 {
-                    echo "<a href='adminLogin.php' style='text-decoration: none; color: black;'><img id='t' src='img/teacher-feature-science-2-640.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm An Admin</b></p><br></a>";
+                    echo "<a href='adminLogin.php' style='text-decoration: none; color: black;'><img id='t' src='img/photo.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm An Admin</b></p><br></a>";
                 }
             ?>
     </div>
-    <!--<button class='emOnHover' style='width: 95%; height: 60px; background-color: #ebebeb; text-align: left; border='none' padding: 2px;' onclick='window.location.assign("groups/".$groupName.".php");'><b>".$date."</b><br><strong>".$sender."</strong> posted in <strong>".$groupName."</strong></button>-->
+    <button class='emOnHover' style='width: 95%; height: 60px; background-color: #ebebeb; text-align: left; border='none' padding: 2px;' onclick='window.location.assign("groups/".$groupName.".php");'><b>".$date."</b><br><strong>".$sender."</strong> posted in <strong>".$groupName."</strong></button>
+    
     </div>
 	</body>
 </html>

@@ -12,12 +12,16 @@
 			
 			if($_COOKIE["Student"]==$messagesArray[0]||$_COOKIE["Student"]==$messagesArray[1])
 			{
+				echo "Success";
 				$threads = displayThreads($_COOKIE["Student"], $_GET["type"]);
 			}
 		}
 		else
 		{
-			$threadList = fopen();
+			$threadList = fopen("students/".$_COOKIE["Student"]."/threads.json", "r");
+			$convos = fread($threadList, filesize($threadLoc));
+			$convosArray = json_decode($messages, false, filesize($threadLoc));
+			fclose($thread);
 		}
 		echo "
 	<html>
@@ -51,7 +55,7 @@
                     <img alt='This Image Cannot Be Loaded' src='img/nclogo.jpg' class='logo'>
 	            </a>
 			</div>
-			<div style='width: 100%; height: 100%; position: fixed; background-color: transparent;'>
+			<div style='width: 100%; height: 100%; position: fixed; background-color: #bf1d32; margin-left: auto; margin-right: auto;>
 				<div style='width: 20%; height: 100%; background-color: white; float: left;>
 					<br>
 					<span>Conversations</span>
