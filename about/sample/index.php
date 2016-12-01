@@ -145,10 +145,10 @@
                                                 for($i = 0; $i < count($content_array); $i++)
                                                 {
                                                         $post_type = $content_array[$i][1];
+                                                        $info = $content_array[$i][0];
+                                                        $head = $content_array[$i][2];
                                                         if($post_type == "post")
                                                         {
-                                                                $info = $content_array[$i][0];
-                                                                $head = $content_array[$i][2];
                                                                 $body = $content_array[$i][3];
                                                                 $attach = $content_array[$i][4];
                                                                 if($attach != "null")
@@ -179,7 +179,11 @@
                                                         }
                                                         else if($post_type == "quiz")
                                                         {
-                                                                
+                                                                echo "<div class='post'>
+                                                                        <h5 class='post-info'>".$info."</h5>
+                                                                        <h3 class='post-head'>".$head."</h3>
+                                                                        <form class='quiz'>
+                                                                </div>";
                                                         }
                                                         else if($post_type == "homework")
                                                         {
