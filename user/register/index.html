@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>New User</title>
+		<link rel='stylesheet' type='text/css' href='../../css/styles.css'>
+		<meta name='viewport' content='width=device-width'>
+		<script src='../../js/functions.js'></script>
+	</head>
+	<body class='sharp'>
+		<div class='header'> 
+			<span class='header-text'>New User</span>
+			<a class='spacer' href=''><span class='header-text' style='padding-top: 38px;'></span></a>
+			<a class='top-nav-link' href='/features'><span class='header-text' style='padding-top: 38px;'>Features</span></a>
+			<a class='top-nav-link' href='/about'><span class='header-text' style='padding-top: 38px;'>About</span></a>
+			<a class='top-nav-link' style='background-color: #bf1d32;' href='../'><span class='header-text' style='padding-top: 38px;'>Home</span></a>
+		</div>
+		<form class='new-user'>
+			<div id='step1' class='new-user-type-select-container' style='display: block;'>
+				<h2>Step 1</h2>
+				<input class='new-user-type-select-option' type='radio' value='student' checked>Student<br>
+				<input class='new-user-type-select-option' type='radio' value='teacher'>Teacher<br>
+				<input class='new-user-type-select-option' type='radio' value='Coach'>Coach<br>
+				<button type='button' class='form-submit' onclick='hide("step1"); show("step2");'>Next</button>
+			</div>
+			<div id='step2' class='new-user-type-select-container'>
+				<h2>Step 2</h2>
+				<button type='button' class='form-submit' onclick='show()'>Next</button>
+			</div>
+		</form>
+	</body>
+</html>

@@ -1,100 +1,109 @@
-<?php
-    if(isset($_COOKIE["Student"]))
-    {
-        echo "<script>window.onload = window.location.assign(\"studentHome.php\");</script>";
-    }
-    else if(isset($_COOKIE["Teacher"]))
-    {
-        echo "<script>window.onload = window.location.assign(\"teacherHome.php\");</script>";
-    }
-    else if(isset($_COOKIE["User"]))
-    {
-        echo "<script>window.onload = window.location.assign(\"adminHome.php\");</script>";
-    }
-?>
-<!DOCTYPE html>
 <html>
 	<head>
-		<script src='js/functions.js/'></script>
-		<script>
-			window.onload =  
-		</script>
-		<script>
-			window.onload = if(window.navigator.standalone())
-			{
-				window.location.assign("indexM.php");
-			}
-		</script>
-		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<title>NCHS</title>
-        <link rel="apple-touch-icon" href="50a14f9295ba81.82144378_North County High.bmp">
-        <link rel="apple-touch-icon" sizes="76x76" href="50a14f9295ba81.82144378_North County High.bmp">
-        <link rel="apple-touch-icon" sizes="120x120" href="50a14f9295ba81.82144378_North County High.bmp">
-        <link rel="apple-touch-icon" sizes="152x152" href="50a14f9295ba81.82144378_North County High.bmp">
-        <link rel="apple-touch-startup-image" href="50a14f9295ba81.82144378_North County High.bmp">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="#bf1d32-translucent">
-        
+		<link rel='stylesheet' type='text/css' href='css/styles.css'>
+		<meta name='viewport' content='width=device-width'>
+		<script src='js/functions.js'></script>
+		<script src='js/slideshow.js'>
+			onload = hide_slides();
+		</script>
 	</head>
-	<body style='background-color: #ebebeb'>
-    <div style="width: 100%;"><a href='northcountyhs.org'><img alt="This Image Can't Be Loaded" src="img/nclogo.jpg" style="margin-left: 25%; width: 50%; height: auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></a></div>
-    <div style='padding-bottom: 20px; margin-top: 5%; overflow: hidden; background-color: transparent; height: auto; width: 100%; margin-left: auto; margin-right: auto;'>
-	<div style="float: left; text-align: center; margin-left: 15%; margin-right: auto; border-radius: 3px; width: 30%; height: auto; background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <?php
-                $cookie_name = "Student";
-                if((isset($_COOKIE[$cookie_name])==TRUE)&&($_COOKIE[$cookie_name]!=NULL))
-                {
-                    echo "<a href='studentHome.php' style='text-decoration: none; color: black;'><img id='pic' src='img/classroomm.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm A Student</b></p><br></a>";
-                }
-                else
-                {
-                    echo "<a href='studentLogin.php' style='text-decoration: none; color: black;'><img id='pic' src='img/classroomm.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm A Student</b></p><br></a>";
-                }
-            ?>
-	</div>
-    <div style="float: right; text-align: center; margin-left: auto; margin-right: 15%; border-radius: 3px; width: 30%; height: auto; background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-             <?php
-                $cookie_name = "Teacher";
-                if((isset($_COOKIE[$cookie_name])==TRUE)&&($_COOKIE[$cookie_name]!=NULL))
-                {
-                    echo "<a href='teacherHome.php' style='text-decoration: none; color: black;'><img id='t' src='img/teacher-feature-science-2-640.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm A Teacher</b></p><br></a>";
-                }
-                else
-                {
-                    echo "<a href='teacherLogin.php' style='text-decoration: none; color: black;'><img id='t' src='img/teacher-feature-science-2-640.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm A Teacher</b></p><br></a>";
-                }
-            ?>
-    </div>
-    <div style="float: right; text-align: center; margin-left: auto; margin-right: 15%; border-radius: 3px; width: 30%; height: auto; background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-             <?php
-                $cookie_name = "Coach";
-                if((isset($_COOKIE[$cookie_name])==TRUE)&&($_COOKIE[$cookie_name]!=NULL))
-                {
-                    echo "<a href='coachHome.php' style='text-decoration: none; color: black;'><img id='t' src='img/teacher-feature-science-2-640.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm A Coach</b></p><br></a>";
-                }
-                else
-                {
-                    echo "<a href='coachLogin.php' style='text-decoration: none; color: black;'><img id='t' src='img/teacher-feature-science-2-640.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm A Coach</b></p><br></a>";
-                }
-            ?>
-    </div>
-    <div style="float:left; text-align: center; margin-left: 15%; margin-right: auto; border-radius: 3px; width: 30%; height: auto; background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-             <?php
-                $cookie_name = "User";
-                if((isset($_COOKIE[$cookie_name])==TRUE)&&($_COOKIE[$cookie_name]!=NULL))
-                {
-                    echo "<a href='aHome.php' style='text-decoration: none; color: black;'><img id='t' src='img/photo.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm An Admin</b></p><br></a>";
-                }
-                else
-                {
-                    echo "<a href='adminLogin.php' style='text-decoration: none; color: black;'><img id='t' src='img/photo.jpg' style='border-top-left-radius: 3px; border-top-right-radius: 3px; width: 100%; height: auto;'><p style='margin-top: auto; margin-bottom: auto;'><br><b>I'm An Admin</b></p><br></a>";
-                }
-            ?>
-    </div>
-    <button class='emOnHover' style='width: 95%; height: 60px; background-color: #ebebeb; text-align: left; border='none' padding: 2px;' onclick='window.location.assign("groups/".$groupName.".php");'><b>".$date."</b><br><strong>".$sender."</strong> posted in <strong>".$groupName."</strong></button>
-    
-    </div>
+	<body class='sharp'>
+		<div class='header' style='margin-top: -100px;'> 
+			<span class='header-text'>North County High School App</span>
+			<div class='top-nav-dropdown' onclick='showHide("form");'><span class='header-text' style='padding-top: 0px;'><br>Sign In &blacktriangledown;</span></div>
+				<div id='form' class='sign-in-form-container'>
+					<div class='tab-general-container'>
+						<div id='login-button' class='tab-general' style='float: left; background-color: lightslategrey;' onclick='show("login"); hide("register"); document.getElementById("login-button").style.backgroundColor = "lightslategray"; document.getElementById("register-button").style.backgroundColor = "white";'>Sign In</div>
+						<div id='register-button' class='tab-general' style='float: right;' onclick='show("register"); hide("login"); document.getElementById("register-button").style.backgroundColor = "lightslategray"; document.getElementById("login-button").style.backgroundColor = "white";'>Register</div>
+					</div>
+					<br>
+					<form id='login' method='post' action='login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
+						<input type='text' name='email' placeholder='Email' class='user-input'>
+						<br>
+						<br> 
+						<input type='password' name='password' placeholder='Password' class='user-input'>
+						<br>
+						<br>
+						<input type='submit' value='Sign In' class='form-submit'>
+					</form>
+					<form id='register' method='post' action='register.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
+						<input type='text' name='email' placeholder='Enter Your Email Address' class='user-input'>
+						<br>
+						<br>
+						<input type='password' name='password' placeholder='Choose A Password' class='user-input'>
+						<br>
+						<br>
+						<input type='password' name='password_confirm' placeholder='Confirm Your Password' class='user-input'>
+						<br>
+						<br>
+						<input type='text' name='first_name' placeholder='First Name' class='user-input'>
+						<br>
+						<br>
+						<input type='text' name='Last_name' placeholder='Last Name' class='user-input'>
+						<br>
+						<br>
+						<input id='id' type='text' name='student_id_number' placeholder='Student ID Number' class='user-input'>
+					</form>
+				</div>
+			</button>
+			<a class='spacer' href=''><span class='header-text' style='padding-top: 38px;'></span></a>
+			<a class='top-nav-link' href='/features'><span class='header-text' style='padding-top: 38px;'>Features</span></a>
+			<a class='top-nav-link' href='/about'><span class='header-text' style='padding-top: 38px;'>About</span></a>
+			<a class='top-nav-link' style='background-color: #bf1d32;' href='../'><span class='header-text' style='padding-top: 38px;'>Home</span></a>
+		</div>
+		<div class='slideshow-container'>
+			<div id='2' class='slide' style='display: block;'>
+				<img id='image2' src='img/nclogo.jpg' height='auto' width="auto" class='slide-image'>
+				<span class='slide-caption'>North County Logo</span>
+			</div>
+			<div id='3' class='slide'>
+				<img id='image3' src='img/north-county-hs-5.jpg' class='slide-image'>
+				<span class='slide-caption'>New Gym</span>
+			</div>
+			<div id='4' class='slide'>
+				<img id='image4' src='img/north-county-hs-6.jpg' class='slide-image'>
+				<span class='slide-caption'>Sports Awards</span>
+			</div>
+			<div id='5' class='slide'>
+				<img id='image5' src='img/1293383640_orig.png' class='slide-image'>
+				<span class='slide-caption'>NCHS Music Presents - Disney: Concert Under the Stars</span>
+			</div>
+			<div id='6' class='slide'>
+				<img id='image6' src='img/TrackPanorama.jpeg' class='slide-image'>
+				<span class='slide-caption'>Regional Track Meet Spring 2016</span>
+			</div>
+		</div>
+		<div class='horizontal-container'>
+			<br>
+			<div style='width: 30%; float: right; margin-right: 2.5%;'>
+				<div class='text-container'>
+					<h1 onclick='location.assign("/about");'>What We Do</h1>
+					<p>
+						Come see what we&#39;re about. We do things differently, mainly making things easier for you!
+					</p>
+				</div>
+			</div>
+			<div style='width: 30%; float: right; margin-right: 2.5%;'>
+				<div class='text-container'>
+					<h1 onclick='location.assign("/features");'>New Features</h1>
+					<p>
+						Check out the new features available from the app. We&#39;ve got loads to tell you about!
+					</p>
+				</div>
+			</div>
+			<div style='width: 30%; float: right; margin-right: 2.5%'>
+				<div class='text-container'>
+					<h1 onclick='location.assign("/");'>Welcome!</h1>
+					<p>
+						Thank you for using the brand-new North County High School App!
+					</p>
+				</div>
+			</div>
+		</div>
+		<br>
 	</body>
+	<script>
+			onload = slide_switch(document.getElementsByClassName("slide").length);
+	</script>
 </html>

@@ -29,3 +29,23 @@ function hide(id)
 {
     document.getElementById(id).style.display = "none";
 }
+
+function show(id)
+{
+    document.getElementById(id).style.display = "block";
+}
+function resize(option)
+{
+    if(option == 0)
+    {
+        document.getElementById("navigation").style.width = "100%";
+        document.getElementById("menu").style.width = "14%";
+        document.getElementById("content").style.width = "80%";
+    }
+    else if(option == 1)
+    {
+        document.getElementById("navigation").style.width = "75%";
+        document.getElementById("menu").style.width = "24%";
+        document.getElementById("content").style.width = "70%";
+    }
+}

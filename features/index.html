@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>NCHS</title>
+		<link rel='stylesheet' type='text/css' href='../css/styles.css'>
+		<meta name='viewport' content='width=device-width'>
+	</head>
+	<body class='sharp'>
+		<div class='header'> 
+			<span class='header-text'>Features</span>
+			<div class='top-nav-dropdown' onclick='showHide("form");'><span class='header-text' style='padding-top: 0px;'><br>Sign In &blacktriangledown;</span></div>
+				<div id='form' class='sign-in-form-container'>
+					<div class='tab-general-container'>
+						<div id='login-button' class='tab-general' style='float: left; background-color: lightslategrey;' onclick='show("login"); hide("register"); document.getElementById("login-button").style.backgroundColor = "lightslategray"; document.getElementById("register-button").style.backgroundColor = "white";'><p>Sign In</p></div>
+						<div id='register-button' class='tab-general' style='float: right;' onclick='show("register"); hide("login"); document.getElementById("register-button").style.backgroundColor = "lightslategray"; document.getElementById("login-button").style.backgroundColor = "white";'><p>Register</p></div>
+					</div>
+					<br>
+					<form id='login' method='post' action='login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
+						<input type='text' name='email' placeholder='Email' class='user-input'>
+						<br>
+						<br> 
+						<input type='password' name='password' placeholder='Password' class='user-input'>
+						<br>
+						<br>
+						<input type='submit' value='Sign In' class='form-submit'>
+					</form>
+					<form id='register' method='post' action='register.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
+						<input type='text' name='email' placeholder='Enter Your Email Address' class='user-input'>
+						<br>
+						<br>
+						<input type='password' name='password' placeholder='Choose A Password' class='user-input'>
+						<br>
+						<br>
+						<input type='password' name='password_confirm' placeholder='Confirm Your Password' class='user-input'>
+						<br>
+						<br>
+						<input type='text' name='first_name' placeholder='First Name' class='user-input'>
+						<br>
+						<br>
+						<input type='text' name='Last_name' placeholder='Last Name' class='user-input'>
+						<br>
+						<br>
+						<input id='id' type='text' name='student_id_number' placeholder='Student ID Number' class='user-input'>
+					</form>
+				</div>
+			</button>
+			<a class='spacer' href=''><span class='header-text' style='padding-top: 38px;'></span></a>
+			<a class='top-nav-link' style='background-color: #bf1d32;' href='/features'><span class='header-text' style='padding-top: 38px;'>Features</span></a>
+			<a class='top-nav-link' href='/about'><span class='header-text' style='padding-top: 38px;'>About</span></a>
+			<a class='top-nav-link' href='../'><span class='header-text' style='padding-top: 38px;'>Home</span></a>
+		</div>
+	</body>
+</html>
