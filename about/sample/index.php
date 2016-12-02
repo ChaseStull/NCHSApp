@@ -19,8 +19,6 @@
                                 break;
                                 case "grades": document.getElementById("grades").style.display = "block"; resize(0);
                                 break;
-                                case "createpost": document.getElementById("createpost").style.display = "block"; resize(1);
-                                break;
                                 default: document.getElementById("feed").style.display = "block"; resize(1);
                         }
                 }
@@ -75,8 +73,11 @@
                         <a href='http://northcountyhs.org'>NCHS Website</a>
                     </div>
                 </div>
-		<div class='home-menu-option' onclick='switchview("createpost");'>
-                   	Create Post
+		<div class='home-menu-option'>
+                    New Option
+                    <div class='home-menu-option-content'>
+                        <span>New Option</span>
+                    </div>
                 </div>
 				<div class='home-menu-option'>
                    	New Option
