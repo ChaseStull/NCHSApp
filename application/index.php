@@ -5,6 +5,6 @@
 	}
 	else
 	{
-		echo "<script>onload = location.assign(\"/login\");</script>";
+		echo "<script>onload = location.assign(\"functions/login\");</script>";
 	}
 ?>
