@@ -457,3 +457,35 @@ body{
 	width: 100%;
 	height: auto;
 }
+.post-text-box{
+	margin-left: auto;
+	margin-right: auto;
+	height: 30px;
+	padding-left: 10px;
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
+}
+.post-text-box:focus{
+	outline-style: none;
+	border: 3px solid #bf1d32;
+	border-radius: 2px;
+}
+.form-submit-post{
+	width: auto;
+	height: 25px;
+	display: block;
+	border-radius: 3px;
+	font-size: 15px;
+	background-color: #bf1d32;
+	color: white;
+	border: none;
+	float: right;
+	margin-top: 10px;
+}
+.form-submit-post:hover{
+	border-radius: 3px;
+	border: 2px solid #bf1d32;
+	background-color: white;
+	color: #bf1d32;
+}

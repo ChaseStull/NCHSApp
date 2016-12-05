@@ -27,7 +27,7 @@
 	<body class='sharp' style='overflow: hidden;'>
 		<div class='header' style='z-index: 4;'> 
 			<span class='header-text'>Welcome, <i>Sample User</i></span>
-			<div class='top-nav-dropdown' onclick='isOnline("err"); showHide("form");'><span class='header-text' style='padding-top: 0px;'>Sign In &blacktriangledown;</span></div>
+			<div class='top-nav-dropdown' onclick='showHide("form");'><span class='header-text' style='padding-top: 0px;'>Sign In &blacktriangledown;</span></div>
 				<div id='form' class='sign-in-form-container'>
 					<form class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
 						<input type='hidden' name='auth' value='true'>
@@ -137,6 +137,19 @@
 			<div class='content-container' id='content'>
 				<div id='feed' class='content' style='display: block;'>
 					<h2 class='content-title'>My Feed</h2>
+                                        <div class='post'>
+                                                <form id='form' onkeypress='document.getElementById("form").submit();' method='post' action='post.php'>
+                                                        <input type='hidden' name='type' value='post'>
+                                                        Title
+                                                        <input type='text' class='post-text-box' name='title' required>
+                                                        <br>
+                                                        Message
+                                                        <textarea name='body' class='post-text-box' style='min-height: 75px;' required></textarea>
+                                                        <button class='form-submit-post'>Post</button>
+                                                        <br>
+                                                        <br>
+                                                </form>
+                                        </div>
 					<?php
                                                 $file = fopen("feed.json", "r");
                                                 $content = fread($file, filesize("feed.json"));
@@ -236,7 +249,7 @@
                 </div>
 				<h3>Example Sport</h3>
 				<p>
-					Remember that practice starts at 3:00 today! sdfsdfhsdf hsdfj sdjfsdj fsjdfs dfsdf sdfsd dg fjf isjei ogjsl i erghk sdguj vhdujgh vsurhg ushfdl kjvshv hsvgx fdsg
+					Remember that practice starts at 3:00 today! sdfsdfhsdf hsdfj sdjfsdiuygfyyyyyyyyyyyyhjhhfthfyjgybj fsjdfs dfsdf sdfsd dg fjf isjei ogjsl i erghk sdguj vhdujgh vsurhg ushfdl kjvshv hsvgx fdsg
 				</p>
 			</div>
 			<div id='5' class='alert'>
