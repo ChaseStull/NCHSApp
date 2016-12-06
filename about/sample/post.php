@@ -1,6 +1,6 @@
 <?php
 	$body = $_POST["body"];
-	$head = $_SERVER['REMOTE_ADDR'];
+	$head = $_SERVER['REMOTE_ADDR']." on ".gmdate("n/j/Y", time())." at ".gmdate("g:i:s a", time());
 	$type = "post";
 	$title = $_POST["title"];
 	$post = array($head, $type, $title, $body, "null");
