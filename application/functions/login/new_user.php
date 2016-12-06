@@ -8,17 +8,27 @@
 	{
 		$quote = $_POST["quote"];
 	}
+	else
+	{
+		$quote = null;
+	}
 	$acc_type = "unknown";
 	$verified = false;
 	
 	$filepath = "../../users/".sha1($username).".json";
 	if(file_exists($filepath))
 	{
-		echo "That account already exists";
+		echo "<body onclick='history.back();'>That account already exists</body>";
 	}
 	else
 	{
-		
-		
+		if($password != $match)
+		{
+			echo "<body onclick='history.back();'>Please make sure your passwords match</body>";
+		}
+		else
+		{
+			//Create
+		}
 	}
 ?>
