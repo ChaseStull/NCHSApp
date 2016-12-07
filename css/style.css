@@ -128,7 +128,6 @@
         background-color: black;
         color: white;
     }
-    
     input:invalid {
         border-color: #bf1d32;
         border-width: 3px;
@@ -310,6 +309,7 @@
         color: #bf1d32;
         border: 2px solid #bf1d32;
     }
+    
 }
 @media(max-width: 425px)
 {

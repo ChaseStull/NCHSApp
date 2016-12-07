@@ -1,9 +1,9 @@
 <?php
 	$username = $_POST["username"];
-	$password = $_POST["password"];
-	$match = $_POST["password confirm"];
-	$first_name = $_POST["first name"];
-	$last_name = $_POST["last name"];
+	$password = sha1($_POST["password"]);
+	$match = sha1($_POST["passwordc"]);
+	$first_name = $_POST["firstn"];
+	$last_name = $_POST["lastn"];
 	if($_POST["quote"] != null)
 	{
 		$quote = $_POST["quote"];
@@ -14,6 +14,7 @@
 	}
 	$acc_type = "unknown";
 	$verified = false;
+	$quota_reached = false;
 	
 	$filepath = "../../users/".sha1($username).".json";
 	if(file_exists($filepath))
@@ -28,7 +29,23 @@
 		}
 		else
 		{
-			//Create
+			$user_root = "../../users/".sha1($username);
+			//Create user root folder
+			mkdir($user_root);
+			
+			//Create $user/docs folder
+			mkdir($user_root."/docs");
+			
+			$user_info_array = array($username, $password, $first_name, $last_name, $quote, $acc_type, $verified, $quota_reached);
+			$user_info = json_encode($user_info_array);
+			
+			$file = fopen($user_root.".json", "w");
+			fwrite($file, $user_info);
+			fclose($file);
+			
+			setcookie("userid", $username, 86400, "/");
+			
+			echo "<script>onload = location.assign(\"../../\");</script>";
 		}
 	}
 ?>

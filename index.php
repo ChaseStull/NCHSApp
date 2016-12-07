@@ -1,3 +1,9 @@
+<?php
+	if(isset($_COOKIE["userid"]))
+	{
+		echo "<script>onload = location.assign(\"/application\");</script>";
+	}
+?>
 <html>
 	<head>
 		<title>NCHS</title>
@@ -18,8 +24,8 @@
 						<div id='register-button' class='tab-general' style='float: right;' onclick='show("register"); hide("login"); document.getElementById("register-button").style.backgroundColor = "lightslategray"; document.getElementById("login-button").style.backgroundColor = "white";'>Register</div>
 					</div>
 					<br>
-					<form id='login' method='post' action='login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
-						<input type='text' name='email' placeholder='Email' class='user-input'>
+					<form id='login' method='post' action='application/functions/login/login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
+						<input type='text' name='username' placeholder='username' class='user-input'>
 						<br>
 						<br> 
 						<input type='password' name='password' placeholder='Password' class='user-input'>
