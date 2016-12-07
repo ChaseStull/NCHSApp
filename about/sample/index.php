@@ -4,25 +4,6 @@
 		<link rel='stylesheet' type='text/css' href='../../css/styles.css'>
 		<meta name='viewport' content='width=device-width'>
 		<script src='../../js/functions.js'></script>
-        <script src='../../js/sniffer.js'></script>
-        <script>
-                function viewswitch(view)
-                {
-                        var content = document.getElementsByClassName("content");
-                        for(var i = 0; i < content.length; i++)
-                        {
-                                content[i].style.display = "none";
-                        }
-                        switch(view)
-                        {
-                                case "feed": document.getElementById("feed").style.display = "block"; resize(1);
-                                break;
-                                case "grades": document.getElementById("grades").style.display = "block"; resize(0);
-                                break;
-                                default: document.getElementById("feed").style.display = "block"; resize(1);
-                        }
-                }
-        </script>
 	</head>
 	<body class='sharp' style='overflow: hidden;'>
 		<div class='header' style='z-index: 4;'> 

@@ -13,6 +13,7 @@
 		$quote = null;
 	}
 	$acc_type = "unknown";
+	$id = null;
 	$verified = false;
 	$quota_reached = false;
 	
@@ -36,7 +37,7 @@
 			//Create $user/docs folder
 			mkdir($user_root."/docs");
 			
-			$user_info_array = array($username, $password, $first_name, $last_name, $quote, $acc_type, $verified, $quota_reached);
+			$user_info_array = array($username, $password, $first_name, $last_name, $quote, $acc_type, $id, $verified, $quota_reached);
 			$user_info = json_encode($user_info_array);
 			
 			$file = fopen($user_root.".json", "w");

@@ -33,23 +33,23 @@
 						<br>
 						<input type='submit' value='Sign In' class='form-submit'>
 					</form>
-					<form id='register' method='post' action='register.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
-						<input type='text' name='email' placeholder='Enter Your Email Address' class='user-input'>
+					<form id='register' method='post' action='application/functions/login/new_user.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
+						<input type='text' name='username' placeholder='Choose a username' class='user-input'>
 						<br>
 						<br>
-						<input type='password' name='password' placeholder='Choose A Password' class='user-input'>
+						<input type='password' name='password' placeholder='Choose a password' class='user-input'>
 						<br>
 						<br>
-						<input type='password' name='password_confirm' placeholder='Confirm Your Password' class='user-input'>
+						<input type='password' name='password_confirm' placeholder='Confirm your password' class='user-input'>
 						<br>
 						<br>
-						<input type='text' name='first_name' placeholder='First Name' class='user-input'>
+						<input type='text' name='first_name' placeholder='First name' class='user-input'>
 						<br>
 						<br>
-						<input type='text' name='Last_name' placeholder='Last Name' class='user-input'>
+						<input type='text' name='Last_name' placeholder='Last name' class='user-input'>
 						<br>
 						<br>
-						<input id='id' type='text' name='student_id_number' placeholder='Student ID Number' class='user-input'>
+						<textarea id='id' type='text' name='quote' placeholder='Quote (optional)' class='user-input'></textarea>
 					</form>
 				</div>
 			</button>
