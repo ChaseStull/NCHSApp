@@ -37,6 +37,9 @@
 									<option value='student'>Student</option>
 									<option value='teacher'>Teacher</option>
 								</select>
+								<br>
+								<br>
+								<button>Select</button>
 							</form>
 						</div>
 					</body>
