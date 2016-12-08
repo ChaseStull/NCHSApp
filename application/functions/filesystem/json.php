@@ -9,4 +9,12 @@
 		
 		return $content_array;
 	}
+	
+	function write_array($filepath, $content_array)
+	{
+		$new_content = json_encode($content_array);
+		$file = fopen($filepath, "w");
+		fwrite($file, $new_content);
+		fclose($file);
+	}
 ?>
