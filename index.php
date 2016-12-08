@@ -40,16 +40,19 @@
 						<input type='password' name='password' placeholder='Choose a password' class='user-input'>
 						<br>
 						<br>
-						<input type='password' name='password_confirm' placeholder='Confirm your password' class='user-input'>
+						<input type='password' name='passwordc' placeholder='Confirm your password' class='user-input'>
 						<br>
 						<br>
-						<input type='text' name='first_name' placeholder='First name' class='user-input'>
+						<input type='text' name='firstn' placeholder='First name' class='user-input'>
 						<br>
 						<br>
-						<input type='text' name='Last_name' placeholder='Last name' class='user-input'>
+						<input type='text' name='Lastn' placeholder='Last name' class='user-input'>
 						<br>
 						<br>
 						<textarea id='id' type='text' name='quote' placeholder='Quote (optional)' class='user-input'></textarea>
+						<br>
+						<br>
+						<input type='submit' value='Register' class='form-submit'>
 					</form>
 				</div>
 			</button>
