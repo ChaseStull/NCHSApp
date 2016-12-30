@@ -3,18 +3,22 @@
 	if(isset($_COOKIE["userid"]))
 	{
 		$user_info = get_array_from_file(sha1($_COOKIE["userid"]).".json", false);
-		if($user_info[6] != null)
+
+		$user_id = $user_info[0];
+		$acc_type = $user_info[5];
+		$student_id_number = $user_info[6];
+		if(isset($student_id_number))
 		{
 			echo "<body onclick='location.assign(\"../\")'>Your id is already set</body>";
 		}
 		else
 		{
-			if(($user_info[5] == "student")&&($user_info[6] == null)&&(isset($_POST["student_id_number"]) == false))
+			if(($acc_type == "student")&&(!isset($student_id_number))&&(!isset($_POST["student_id_number"])))
 			{
 				echo "<html>
 						<head>
 							<title>Set Student ID</title>
-							<link rel='stylesheet' type='text/css' href='../css/styles.css'>
+							<link rel='stylesheet' type='text/css' href='../../css/styles.css'>
 							<script src='../js/functions.js'></script>
 						</head>
 						<body class='sharp'>
@@ -25,23 +29,25 @@
 								<p class='text-container'>
 									&nbsp&nbsp&nbsp&nbsp&nbspTo get your account verified, enter your Student ID number below. Once a teacher or coach has added you to a class or team, your account will be verified.
 								</p>
-								<form class='form-general' method='post' action='./'>
+								<form class='form-general' method='post' action=''>
 									<input type='text' name='student_id_number' placeholder='Student ID Number'>
 									<br>
 									<br>
 									<button>Get Verified</button>
+									<br>
+									<br>
 									<button type='button' onclick='location.assign(\"../\");'>Set ID Later</button>
 								</form>
 							</div>
 						</body>
 					</html>";
 			}
-			else if(($user_info[5] == "student")&&(isset($_POST["student_id_number"])))
+			else if(($acc_type == "student")&&(isset($_POST["student_id_number"])))
 			{
 				$student_id_number = $_POST["student_id_number"];
 				$user_info[6] = $student_id_number;
-				write_array($user_info, sha1($_COOKIE["userid"]).".json");
-				echo "<script>onload = location.assign(\"../\");</script>";
+				write_array(sha1($_COOKIE["userid"]).".json", $user_info);
+				echo "<script>onload = location.assign(\"../..\");</script>";
 			}
 			else
 			{
@@ -51,6 +57,6 @@
 	}
 	else
 	{
-		echo "Something went wrong";
+		echo "<script>onload = location.assign(\"../../\");</script>";
 	}
 ?>

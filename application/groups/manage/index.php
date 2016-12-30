@@ -90,9 +90,9 @@
 									<div class='member-info-block'>
 										<span>Add Member</span>
 										<form class='post' method='post' action='add_member.php'>
-											<input type='hidden' value='".$_GET["group_id"]."'>
+											<input type='hidden' name='group_id' value='".$_GET["group_id"]."'>
 											<span>Member Username</span>
-											<select name='userid' class='post-text-box'>
+											<select name='user_id' class='post-text-box'>
 												".$teacher_options_f."
 												".$student_options_f."
 											</select>

@@ -14,11 +14,11 @@
 			onload = hide_slides();
 		</script>
 	</head>
-	<body class='sharp'>
+	<body class='sharp' style='overflow: auto;'>
 		<div class='header' style='margin-top: -100px;'> 
 			<span class='header-text'>North County High School App</span>
 			<div class='top-nav-dropdown' onclick='showHide("form");'><span class='header-text' style='padding-top: 0px;'><br>Sign In &blacktriangledown;</span></div>
-				<div id='form' class='sign-in-form-container'>
+				<div id='form' class='sign-in-form-container' style='overflow: auto;'>
 					<div class='tab-general-container'>
 						<div id='login-button' class='tab-general' style='float: left; background-color: lightslategrey;' onclick='show("login"); hide("register"); document.getElementById("login-button").style.backgroundColor = "lightslategray"; document.getElementById("register-button").style.backgroundColor = "white";'>Sign In</div>
 						<div id='register-button' class='tab-general' style='float: right;' onclick='show("register"); hide("login"); document.getElementById("register-button").style.backgroundColor = "lightslategray"; document.getElementById("login-button").style.backgroundColor = "white";'>Register</div>
@@ -47,6 +47,12 @@
 						<br>
 						<br>
 						<input type='text' name='Lastn' placeholder='Last name' class='user-input'>
+						<br>
+						<br>
+						<select class='user-input' name='acc_type'>
+							<option value='student'>Student</option>
+							<option value='teacher'>Teacher</option>
+						</select>
 						<br>
 						<br>
 						<textarea id='id' type='text' name='quote' placeholder='Quote (optional)' class='user-input'></textarea>

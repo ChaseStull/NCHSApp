@@ -73,6 +73,7 @@
     z-index: 3;
 	right: 0;
 	height: auto;
+	max-height: 500px;
 	top: 100%;
 }
 .sign-in-form-container a{

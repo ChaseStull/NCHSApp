@@ -1,9 +1,12 @@
 <?php
+	require("../filesystem/json.php");
+
 	$username = $_POST["username"];
 	$password = sha1($_POST["password"]);
 	$match = sha1($_POST["passwordc"]);
 	$first_name = $_POST["firstn"];
 	$last_name = $_POST["lastn"];
+	$acc_type = $_POST["acc_type"];
 	if($_POST["quote"] != null)
 	{
 		$quote = $_POST["quote"];
@@ -12,7 +15,6 @@
 	{
 		$quote = null;
 	}
-	$acc_type = "unknown";
 	$id = null;
 	$verified = false;
 	$quota_reached = false;
@@ -55,6 +57,16 @@
 			$file = fopen($user_root.".json", "w");
 			fwrite($file, $user_info);
 			fclose($file);
+
+			$master_user_list = get_array_from_file("../../users/master.json", false);
+			if($acc_type == "student")
+			{
+				array_push($master_user_list[1], $username);
+			}
+			else if($acc_type == "teacher")
+			{
+				array_push($master_user_list[0], $username);
+			}
 			
 			setcookie("userid", $username, 86400, "/");
 			
