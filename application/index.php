@@ -23,6 +23,46 @@
 			#Determine the logged on user's user_account_type
 			switch ($user_account_type)
 			{
+				case "unknown":
+				{
+					if(isset($_POST["acc_type"]))
+					{
+						$user_info[5] = $_POST["acc_type"];
+						write_array($root.".json", $user_info);
+
+						echo "<script>onload = location.assign(\"../\");</script>";
+					}
+					else
+					{
+						echo "<html>
+							<head>
+								<title>Select Account Type</title>
+								<link rel='stylesheet' type='text/css' href='../css/styles.css'>
+								<script src='../js/functions.js'></script>
+							</head>
+							<body class='sharp'>
+								<div class='header' style='margin-top: -50px;'>
+									<div class='top-nav-dropdown' onclick='showHide(\"form\");'><br><span class='header-text' style='padding-top: 0px;'>Account Options &blacktriangledown;</span></button>
+										<div id='form' class='sign-in-form-container'>
+											<a href='functions/login/logout.php'>Sign out</a>
+										</div>
+									</div>
+									<span class='header-text'>Choose your account type (You only get to set this ONE TIME)</span>
+								</div>
+								<form class='form-general' method='post' action='./'>
+									<select class='post-text-box' style='margin-top: 50px;' name='acc_type'>
+										<option value='student'>Student</option>
+										<option value='teacher'>Teacher</option>
+									</select>
+									<br>
+									<br>
+									<button>Set Account Type</button>
+								</form>
+							</body>
+						</html>";
+					}
+				}
+				break;
 				case "student":
 				{
 					if($user_account_verification_status == false)

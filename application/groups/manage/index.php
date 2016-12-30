@@ -16,6 +16,8 @@
 		$group_admins = $group_array[4];
 		$group_members = $group_array[5];
 		$group_posts = $group_array[6];
+
+		$group_links = format(get_array_from_file("../../users/".sha1($_COOKIE["userid"])."/groups.json", false), "group_link");
 		
 		for($i = 0; $i < count($group_admins); $i++)
 		{
@@ -48,7 +50,7 @@
 								"; if($is_owner)
 								{	
 									echo "<div></div>
-									<button onclick='if(confirm(\"Delete Group?\n\nAre you sure you want to delete this group?\nThis will complete the following actions:\n    Disable posting to this group\n    Disable notifications from this grpup\n\nThis will not:\n    Delete the group from your students group list\n    Delete the posts made in this group\n\")){location.assign(\"../delete/?group_id=".$_GET["group_id"]."\");}else{}'>Delete group</button>";
+									<button class='post-text-box' onclick='if(confirm(\"Delete Group?\n\nAre you sure you want to delete this group?\nThis will complete the following actions:\n    Disable posting to this group\n    Disable notifications from this grpup\n\nThis will not:\n    Delete the group from your students group list\n    Delete the posts made in this group\n\")){location.assign(\"../delete/?group_id=".$_GET["group_id"]."\");}else{}'>Delete group</button>";
 								}
 							echo "</div>
 						</div>
@@ -74,31 +76,37 @@
 			                        <a href='http://northcountyhs.org'>NCHS Website</a>
 			                    </div>
 			                </div>
-							<div class='home-menu-option' onclick='show(\"members\"); hide(\"add_member\"); hide(\"admins\");'>
+							<div class='home-menu-option' onclick='show(\"members\"); hide(\"addmember\"); hide(\"admins\");'>
 			                   	Members
 			                </div>
-							<div class='home-menu-option' onclick='hide(\"members\"); hide(\"add_member\"); show(\"admins\");'>
+							<div class='home-menu-option' onclick='hide(\"members\"); hide(\"addmember\"); show(\"admins\");'>
 			                   	Administrators
 			                </div>
 			            </div>
 						<div class='content-container' id='content'>
-							<div id='members' class='content'>
+							<div id='members' class='content' style='display: block;'>
 								Members
 								<div class='post'>	
-									<div class='member-info-block' onclick='hide(\"members\"); hide(\"admins\"); show(\"add_member\");'>
+									<div class='member-info-block'>
 										<span>Add Member</span>
+										<form class='post' method='post' action='add_member.php'>
+											<input type='hidden' value='".$_GET["group_id"]."'>
+											<span>Member Username</span>
+											<select name='userid' class='post-text-box'>
+												".$teacher_options_f."
+												".$student_options_f."
+											</select>
+											<br>
+											<br>
+											<span>Member Type</span>
+											<select name='member_type' class='post-text-box'>
+												<option value='admin'>Administrator</option>
+												<option value='member'>Standard Member</option>
+											</select>
+										</form>
 									</div>
 									".$group_members_f."
 								</div>
-							</div>
-							<div id='add_member' class='content'>
-								<form class='post' method='post' action='add_member.php'>
-									<input type='hidden' value='".$_GET["group_id"]."'>
-									<select name='userid' class='post-text-box'>
-										".$teacher_options_f."
-										".$student_options_f."
-									</select>
-								</form>
 							</div>
 						</div>
 					</div>
