@@ -19,12 +19,12 @@
 
     switch($member_type)
     {
-        case "member":
+        case "standard member":
         {
             array_push($group_info[5], $add_user_id);
         }
         break;
-        case "admin":
+        case "administrator":
         {
             array_push($group_info[4], $add_user_id);
             array_push($group_info[5], $add_user_id);
@@ -37,7 +37,14 @@
     }
     write_array("../".$group_id.".json", $group_info);
 
-    $note = create_notification();
+    $user_filepaths = array();
+    for($i = 0; $i < count($group_info[4]); $i++)
+    {
+        array_push($user_filepaths, "../../users/".sha1($group_info[4][$i]));
+    }
+
+    $note = create_notification($group_info[0], $_COOKIE["userid"]." has added ".$add_user_id." as a/an ".$member_type.".");
+    send_notification($note, $user_filepaths);
 
     echo "<script>onload = location.assign(\"../\");</script>";
 ?>

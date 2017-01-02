@@ -100,9 +100,12 @@
 											<br>
 											<span>Member Type</span>
 											<select name='member_type' class='post-text-box'>
-												<option value='member'>Standard Member</option>
-												<option value='admin'>Administrator</option>
+												<option value='standard member'>Standard Member</option>
+												<option value='administrator'>Administrator</option>
 											</select>
+											<br>
+											<br>
+											<button class='add-member-form-submit'>Add Member</button>
 										</form>
 									</div>
 									".$group_members_f."

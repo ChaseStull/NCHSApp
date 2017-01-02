@@ -629,3 +629,21 @@ body{
 .member-info-block:hover .member-option-bar{
 	display: block;
 }
+.add-member-form-submit{
+	width: 98%;
+	height: 30px;
+	display: block;
+	border-radius: 3px;
+	font-size: 15px;
+	background-color: #bf1d32;
+	color: white;
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+.add-member-form-submit:hover{
+	background-color: white;
+	color: #bf1d32;
+	border: 2px solid #bf1d32;
+}
