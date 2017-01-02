@@ -67,6 +67,7 @@
 			{
 				array_push($master_user_list[0], $username);
 			}
+			write_array("../../users/master.json", $master_user_list);
 			
 			setcookie("userid", $username, 86400, "/");
 			

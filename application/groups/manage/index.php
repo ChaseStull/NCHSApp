@@ -100,8 +100,8 @@
 											<br>
 											<span>Member Type</span>
 											<select name='member_type' class='post-text-box'>
-												<option value='admin'>Administrator</option>
 												<option value='member'>Standard Member</option>
+												<option value='admin'>Administrator</option>
 											</select>
 										</form>
 									</div>
