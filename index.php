@@ -46,7 +46,7 @@
 						<input type='text' name='firstn' placeholder='First name' class='user-input'>
 						<br>
 						<br>
-						<input type='text' name='Lastn' placeholder='Last name' class='user-input'>
+						<input type='text' name='lastn' placeholder='Last name' class='user-input'>
 						<br>
 						<br>
 						<select class='user-input' name='acc_type'>

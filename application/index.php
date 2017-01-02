@@ -17,6 +17,8 @@
 		$user_feed = get_array_from_file($root."/feed.json", false);
 		$user_groups = get_array_from_file($root."/groups.json", false);
 		
+		$alerts = format($user_alerts, "alert");
+		
 		#If the logged on user's user_id matches the user_id on file for the account associated with the logged on user's user_id
 		if($_COOKIE["userid"] == $user_id)
 		{
@@ -327,7 +329,7 @@
 				{
 					if($user_account_verification_status == false)
 					{
-						if(isset($_POST["email"]) == false)
+						if(!isset($_POST["email"]))
 						{
 							echo "<html>
 								<head>

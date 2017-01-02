@@ -354,9 +354,6 @@ body{
 .alert:hover .alert-option-bar{
 	display: block;
 }
-.alert:hover h3{
-	margin-top: 0;
-}
 .alert-option-bar-image{
 	height: 18px;
 	width: 18px;

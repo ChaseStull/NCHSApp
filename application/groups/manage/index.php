@@ -86,28 +86,32 @@
 						<div class='content-container' id='content'>
 							<div id='members' class='content' style='display: block;'>
 								Members
-								<div class='post'>	
-									<div class='member-info-block'>
-										<span>Add Member</span>
-										<form class='post' method='post' action='add_member.php'>
-											<input type='hidden' name='group_id' value='".$_GET["group_id"]."'>
-											<span>Member Username</span>
-											<select name='user_id' class='post-text-box'>
-												".$teacher_options_f."
-												".$student_options_f."
-											</select>
-											<br>
-											<br>
-											<span>Member Type</span>
-											<select name='member_type' class='post-text-box'>
-												<option value='standard member'>Standard Member</option>
-												<option value='administrator'>Administrator</option>
-											</select>
-											<br>
-											<br>
-											<button class='add-member-form-submit'>Add Member</button>
-										</form>
-									</div>
+								<div class='post'>";
+										if(($teacher_options_f != ""&&$teacher_options_f != null)||($student_options_f != ""&&$student_options_f != null))
+										{
+											echo "<div class='member-info-block'>
+												<span>Add Member</span>
+												<form class='post' method='post' action='add_member.php'>
+												<input type='hidden' name='group_id' value='".$_GET["group_id"]."'>
+												<span>Member Username</span>
+												<select name='user_id' class='post-text-box' required>
+													".$teacher_options_f."
+													".$student_options_f."
+												</select>
+												<br>
+												<br>
+												<span>Member Type</span>
+												<select name='member_type' class='post-text-box'>
+													<option value='standard member'>Standard Member</option>
+													<option value='administrator'>Administrator</option>
+												</select>
+												<br>
+												<br>
+												<button class='add-member-form-submit'>Add Member</button>
+											</form>
+										</div>";
+										}
+									echo "
 									".$group_members_f."
 								</div>
 							</div>

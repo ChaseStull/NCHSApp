@@ -129,6 +129,26 @@
 				return $options;
 			}
 			break;
+            case "alert":
+            {
+                $alerts = "";
+                for($i = 0; $i < count($array); $i++)
+                {
+                    $alerts .= "<div class='alert'>
+                        <form id='note-".$i."' action='functions/notifications/remove_notification.php' method='post' style='display: none;'>
+                            <input type='hidden' name='index' value='".$i."'>
+                        </form>
+                        <div class='alert-option-bar'>
+                            <img class='alert-option-bar-image' src='../img/trash-can-red.png' alt='O' onclick='if(confirm(\"Are you sure you want to remove this notification?\\n(This can not be undone)\") == true){document.getElementById(\"note-".$i."\").submit();}'>
+                        </div>
+                        <h3>".$array[$i][0]."</h3>
+                        <p>
+                            ".$array[$i][1]."
+                        </p>
+                    </div>";
+                }
+                return $alerts;
+            }
 		}
 	}
 ?>

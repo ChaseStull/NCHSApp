@@ -41,14 +41,17 @@
 			
 			//Create user feed file
 			$feed = fopen($user_root."/feed.json", "w");
+			fwrite($feed, "[]");
 			fclose($feed);
 			
 			//Create user notifications file
 			$notifications = fopen($user_root."/notifications.json", "w");
+			fwrite($notifications, "[]");
 			fclose($notifications);
 			
 			//Create user groups file
 			$groups = fopen($user_root."/groups.json", "w");
+			fwrite($groups, "[]");
 			fclose($groups);
 			
 			$user_info_array = array($username, $password, $first_name, $last_name, $quote, $acc_type, $id, $verified, $quota_reached);
