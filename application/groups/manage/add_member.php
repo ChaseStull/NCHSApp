@@ -11,7 +11,7 @@
     $add_user_info = get_array_from_file($add_user_root.".json");
     if($add_user_info[5] == "student")
     {
-        $member_type = "member";
+        $member_type = "standard member";
     }
     $add_user_groups = get_array_from_file($add_user_root."/groups.json", false);
     array_push($add_user_groups, $group_info[0]);
@@ -46,5 +46,5 @@
     $note = create_notification($group_info[0], $_COOKIE["userid"]." has added ".$add_user_id." as a/an ".$member_type.".");
     send_notification($note, $user_filepaths);
 
-    echo "<script>onload = location.assign(\"../\");</script>";
+    echo "<script>onload = location.assign(\"./?group_id=".$group_id."\");</script>";
 ?>

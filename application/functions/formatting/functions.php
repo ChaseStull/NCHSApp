@@ -115,6 +115,20 @@
                 }
                 return $members;
             }
+            break;
+            case "member_option":
+			{
+				$options = "";
+				for($i = 0; $i < count($array[0]); $i++)
+				{
+                    if(!in_array($array[0][$i], $array[1]))
+                    {
+                        $options .= "<option value='".$array[0][$i]."'>".$array[0][$i]."</option>";
+                    }
+				}
+				return $options;
+			}
+			break;
 		}
 	}
 ?>

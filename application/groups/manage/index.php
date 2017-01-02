@@ -33,8 +33,8 @@
 		
 		if($is_admin||$is_owner)
 		{
-			$teacher_options_f = format(get_array_from_file("../../users/master.json", false)[0], "group_option");
-			$student_options_f = format(get_array_from_file("../../users/master.json", false)[1], "group_option");
+			$teacher_options_f = format(array(get_array_from_file("../../users/master.json", false)[0], $group_members), "member_option");
+			$student_options_f = format(array(get_array_from_file("../../users/master.json", false)[1], $group_members), "member_option");
 			$group_members_f = format($group_members, "member_info_block");
 			echo "<html>
 				<head>
