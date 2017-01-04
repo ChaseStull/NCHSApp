@@ -321,6 +321,9 @@ body{
 .alert:hover{
 	background-color: #ababab;
 }
+.alert:hover h3{
+	margin-top: -1px;
+}
 .tab-general p{
 	padding-top: 20px;
 }
@@ -351,9 +354,9 @@ body{
 	display: none;
     position: relative;
 }
-.alert:hover .alert-option-bar{
+/*.alert:hover .alert-option-bar{
 	display: block;
-}
+}*/
 .alert:hover .h3{
 	margin-top: 0;
 }

@@ -3,6 +3,17 @@
 	require("functions/formatting/functions.php");
 	if(isset($_COOKIE["userid"]))
 	{
+		echo "<script src='../js/jquery-3.1.1.min.js'></script>
+		<script>
+			$(document).ready(function(){
+				$('.alert').mouseenter(function(){
+					$(this.getElementByClassName('.alert-option-bar')).fadeIn('fast');
+					$(this).mouseleave(function(){
+						$('.alert-option-bar').fadeOut('fast');
+					});
+				});
+			});
+		</script>";
 		$root = "users/".sha1($_COOKIE["userid"]);
 		$user_info = get_array_from_file($root.".json", false);
 		$user_id = $user_info[0];
