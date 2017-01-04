@@ -352,11 +352,11 @@ body{
 	background-color: rgba(0,0,0,0.7);
 	z-index: 7;
 	display: none;
-    position: relative;
+	position: relative;
 }
-/*.alert:hover .alert-option-bar{
+.alert:hover .alert-option-bar{
 	display: block;
-}*/
+}
 .alert:hover .h3{
 	margin-top: 0;
 }
@@ -533,7 +533,6 @@ body{
 .tab-bar{
 	background-color: black;
 	width: 100%;
-	margin-top: -100px;
 }
 .tab-bar span{
 	display: block;

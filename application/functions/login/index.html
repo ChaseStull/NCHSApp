@@ -4,50 +4,50 @@
 		<link rel='stylesheet' type='text/css' href='../../../css/styles.css'>
 		<script src='../../../js/functions.js'></script>
 	</head>
-	<body class='sharp'>
-		<div id='signin'>
-		<div class='tab-bar'><span onclick='show("signin"); hide("new");' style='float: left; background-color: white; color: black;'>Sign In</span><span onclick='hide("signin"); show("new");' style='float: right;'>New Account</span></div>
-		<span class='span'>Sign in</span>
-		<form class='login-form' id='login' action='login.php' method='post'>
-			<input type='text' name='username' class='post-text-box' placeholder='Username'>
-			<br>
-			<br>
-			<input type='password' name='password' class='post-text-box' placeholder='Password'>
-			<br>
-			<br>
-			<button class='form-submit'>Log In</button>
-		</form>
-	</div>
-	<div id='new' class='sharp' style='display: none;'>
-		<div class='tab-bar'><span onclick='show("signin"); hide("new");' style='float: left;'>Sign In</span><span onclick='hide("signin"); show("new");' style='float: right; background-color: white; color: black;'>New Account</span></div>
-		<span class='span'>New Account</span>
-		<form class='login-form' id='login' action='new_user.php' method='post'>
-			<input type='text' name='username' class='post-text-box' placeholder='Pick a username' required>
-			<br>
-			<br>
-			<input type='password' name='password' class='post-text-box' placeholder='Choose a password' required>
-			<br>
-			<br>
-			<input type='password' name='passwordc' class='post-text-box' placeholder='Confirm password' required>
-			<br>
-			<br>
-			<input type='text' name='firstn' class='post-text-box' placeholder='First name' required>
-			<br>
-			<br>
-			<input type='text' name='lastn' class='post-text-box' placeholder='Last name' required>
-			<br>
-			<br>
-			<input type='text' name='quote' class='post-text-box' placeholder='Quote (optional)'>
-			<br>
-			<br>
-			<select name='acc-type' class='post-text-box'>
-				<option value='student'>Student</option>
-				<option value='teacher'>Teacher</option>
-			</select>
-			<br>
-			<br>
-			<button class='form-submit'>Register</button>
-		</form>
+	<body class='sharp' style='overflow: auto;'>
+		<div id='signin' class='sharp'>
+			<div class='tab-bar'><span onclick='show("signin"); hide("new");' style='float: left; background-color: white; color: black;'>Sign In</span><span onclick='hide("signin"); show("new");' style='float: right;'>New Account</span></div>
+			<span class='span'>Sign in</span>
+			<form class='login-form' id='login' action='login.php' method='post'>
+				<input type='text' name='username' class='post-text-box' placeholder='Username'>
+				<br>
+				<br>
+				<input type='password' name='password' class='post-text-box' placeholder='Password'>
+				<br>
+				<br>
+				<button class='form-submit'>Log In</button>
+			</form>
+		</div>
+		<div id='new' class='sharp' style='display: none;'>
+			<div class='tab-bar'><span onclick='show("signin"); hide("new");' style='float: left;'>Sign In</span><span onclick='hide("signin"); show("new");' style='float: right; background-color: white; color: black;'>New Account</span></div>
+			<span class='span'>New Account</span>
+			<form class='login-form' id='login' action='new_user.php' method='post'>
+				<input type='text' name='username' class='post-text-box' placeholder='Pick a username' required>
+				<br>
+				<br>
+				<input type='password' name='password' class='post-text-box' placeholder='Choose a password' required>
+				<br>
+				<br>
+				<input type='password' name='passwordc' class='post-text-box' placeholder='Confirm password' required>
+				<br>
+				<br>
+				<input type='text' name='firstn' class='post-text-box' placeholder='First name' required>
+				<br>
+				<br>
+				<input type='text' name='lastn' class='post-text-box' placeholder='Last name' required>
+				<br>
+				<br>
+				<input type='text' name='quote' class='post-text-box' placeholder='Quote (optional)'>
+				<br>
+				<br>
+				<select name='acc_type' class='post-text-box'>
+					<option value='student'>Student</option>
+					<option value='teacher'>Teacher</option>
+				</select>
+				<br>
+				<br>
+				<button class='form-submit'>Register</button>
+			</form>
 		</div>
 	</body>
 </html>

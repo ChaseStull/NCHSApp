@@ -5,7 +5,7 @@
 		<meta name='viewport' content='width=device-width'>
 		<script src='../js/functions.js'></script>
 	</head>
-	<body class='sharp' style='background-color: rgba(0,0,0,0.8);'>
+	<body class='sharp' style='background-color: rgba(0,0,0,0.8); overflow: auto;'>
 		<div class='header' style='z-index: 4;'> 
 			<span class='header-text'>About</span>
 			<button class='top-nav-dropdown' onclick='showHide("form");'><span class='header-text' style='padding-top: 0px;'>Sign In &blacktriangledown;</span></button>

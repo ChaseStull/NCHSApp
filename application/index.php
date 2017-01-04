@@ -3,17 +3,7 @@
 	require("functions/formatting/functions.php");
 	if(isset($_COOKIE["userid"]))
 	{
-		echo "<script src='../js/jquery-3.1.1.min.js'></script>
-		<script>
-			$(document).ready(function(){
-				$('.alert').mouseenter(function(){
-					$(this.getElementByClassName('.alert-option-bar')).fadeIn('fast');
-					$(this).mouseleave(function(){
-						$('.alert-option-bar').fadeOut('fast');
-					});
-				});
-			});
-		</script>";
+		echo "<script src='../js/jquery-3.1.1.min.js'></script>";
 		$root = "users/".sha1($_COOKIE["userid"]);
 		$user_info = get_array_from_file($root.".json", false);
 		$user_id = $user_info[0];
@@ -21,6 +11,7 @@
 		$user_last_name = $user_info[3];
 		$user_quote = $user_info[4];
 		$user_account_type = $user_info[5];
+		echo $user_account_type;
 		$user_account_id = $user_info[6];
 		$user_account_verification_status = $user_info[7];
 		$user_account_quota_status = $user_info[8];
@@ -338,9 +329,9 @@
 				break;
 				case "teacher":
 				{
-					if($user_account_verification_status == false)
+					if($user_info[7] == false)
 					{
-						if(!isset($_POST["email"]))
+						if(/*!isset($_POST["email"])*/true)
 						{
 							echo "<html>
 								<head>
