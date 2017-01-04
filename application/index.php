@@ -11,7 +11,6 @@
 		$user_last_name = $user_info[3];
 		$user_quote = $user_info[4];
 		$user_account_type = $user_info[5];
-		echo $user_account_type;
 		$user_account_id = $user_info[6];
 		$user_account_verification_status = $user_info[7];
 		$user_account_quota_status = $user_info[8];
@@ -331,7 +330,7 @@
 				{
 					if($user_info[7] == false)
 					{
-						if(/*!isset($_POST["email"])*/true)
+						if(!isset($_POST["email"]))
 						{
 							echo "<html>
 								<head>
@@ -347,7 +346,7 @@
 										<p class='text-container'>
 											&nbsp&nbsp&nbsp&nbsp&nbspTo get your account verified, enter your professional email address below.
 										</p>
-										<form class='form-general' method='post' action='./'>
+										<form class='form-general' method='post' action=''>
 											<input type='text' name='email' placeholder='Professional email address' required>
 											<br>
 											<br>
@@ -364,7 +363,7 @@
 							{
 								$user_info[7] = true;
 								$user_info[6] = $user_info[1];
-								write_array($user_info, "users/".sha1($user_id).".json");
+								write_array( "users/".sha1($user_id).".json", $user_info);
 								echo "<script>onload = location.assign(\"./\");</script>";
 							}
 							else

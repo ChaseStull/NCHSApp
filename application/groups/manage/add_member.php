@@ -52,6 +52,8 @@
 
     $note = create_notification($group_info[0], $_COOKIE["userid"]." has added ".$add_user_id." as a/n ".$member_type.".");
     send_notification($note, $user_filepaths);
+    $note1 = create_notification($group_info[0], "You have been added as a/n ".$member_type." to ".$group_info[0].".");
+    send_notification($note1, array("../../users/".sha1($add_user_id)));
 
     echo "<script>onload = location.assign(\"./?group_id=".$group_id."\");</script>";
 ?>

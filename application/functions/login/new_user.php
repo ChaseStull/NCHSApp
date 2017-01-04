@@ -6,7 +6,7 @@
 	$match = sha1($_POST["passwordc"]);
 	$first_name = $_POST["firstn"];
 	$last_name = $_POST["lastn"];
-	$acc_type = $_POST["acc_type"];
+	$acc_type = $_POST["acc"];
 	if($_POST["quote"] != null)
 	{
 		$quote = $_POST["quote"];
@@ -54,7 +54,7 @@
 			fwrite($groups, "[]");
 			fclose($groups);
 			
-			$user_info_array = array($username, $password, $first_name, $last_name, $quote, $acc_type, $id, $verified, $quota_reached);
+			$user_info_array = array($username, $password, $first_name, $last_name, $quote, $_POST["acc"], $id, $verified, $quota_reached);
 			$user_info = json_encode($user_info_array);
 			
 			$file = fopen($user_root.".json", "w");
