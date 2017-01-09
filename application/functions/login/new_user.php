@@ -39,6 +39,11 @@
 			//Create $user/docs folder
 			mkdir($user_root."/docs");
 			
+			//Initialize docs directory tracking
+			$file = fopen($user_root."/docs/dir.json");
+			$fwrite($file, "[]");
+			fclose($file);
+			
 			//Create user feed file
 			$feed = fopen($user_root."/feed.json", "w");
 			fwrite($feed, "[]");
