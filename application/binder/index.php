@@ -1,5 +1,6 @@
 <?php
-	require("../functions/filesystem/");
+	require("../functions/filesystem/json.php");
+	require("../functions/formatting/functions.php");
 	
 	if(isset($_COOKIE["userid"]))
 	{ 
@@ -15,9 +16,10 @@
 			$user_account_verification_status = $user_info[7];
 			$user_account_quota_status = $user_info[8];
 			
-			$files = 
+			$files = get_array_from_file("../users/".sha1($user_info[0])."/docs/dir.json");
+			$files_f = format($files, "dir");
 			
-			echo
+			echo ""; 
 		}
 		else
 		{

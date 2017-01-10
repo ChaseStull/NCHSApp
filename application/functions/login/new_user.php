@@ -43,6 +43,8 @@
 			$file = fopen($user_root."/docs/dir.json");
 			$fwrite($file, "[]");
 			fclose($file);
+			$file = fopen($user_root."/docs/log.dir");
+			fclose($file);
 			
 			//Create user feed file
 			$feed = fopen($user_root."/feed.json", "w");
