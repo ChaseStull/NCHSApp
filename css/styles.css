@@ -654,3 +654,15 @@ body{
 	margin: 0;
 	background-color: #ebebeb;
 }
+.file:hover{
+	background-color: #bbbbbb;
+}
+.file span{
+	float: left;
+	color: #3e3e3e;
+	font-size: 20px;
+}
+.file h6{
+	font-size: 20px;
+	display: inline;
+}

@@ -19,7 +19,7 @@
 			$files = get_array_from_file("../users/".sha1($user_info[0])."/docs/dir.json");
 			$files_f = format($files, "dir");
 			
-			echo ""; 
+			echo $files_f;
 		}
 		else
 		{
