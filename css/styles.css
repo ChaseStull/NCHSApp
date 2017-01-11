@@ -658,7 +658,7 @@ body{
 	background-color: #bbbbbb;
 }
 .file span{
-	float: left;
+	float: right;
 	color: #3e3e3e;
 	font-size: 20px;
 }

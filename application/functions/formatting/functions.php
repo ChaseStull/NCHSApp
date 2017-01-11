@@ -87,7 +87,7 @@
             case "member_info_block":
             {
                 $members = "";
-                include("http://nchsapp.azurewebsites.net/application/functions/filesystem/json.php");
+                include("../functions/filesystem/json.php");
                 for($i = 0; $i < count($array); $i++)
                 {
                     $member_array = get_array_from_file("../../users/".sha1($array[$i]).".json");
@@ -155,10 +155,10 @@
             {
                 #Logging
                 $log_statement = $time." DIRECTORY /application/users".sha1($_COOKIE["userid"])."/docs ACCESSED\n";
-                $file = fopen("http://nchsapp.azurewebsites.net/application/users".sha1($_COOKIE["userid"])."/docs/log.dir", "r");
-                $history = fread($file, filesize("http://nchsapp.azurewebsites.net/application/users".sha1($_COOKIE["userid"])."/docs/log.dir"));
+                $file = fopen("../users".sha1($_COOKIE["userid"])."/docs/log.dir", "r");
+                $history = fread($file, filesize("../users".sha1($_COOKIE["userid"])."/docs/log.dir"));
                 fclose($file);
-                $file = fopen("http://nchsapp.azurewebsites.net/application/users".sha1($_COOKIE["userid"])."/docs/log.dir", "w");
+                $file = fopen("../users".sha1($_COOKIE["userid"])."/docs/log.dir", "w");
                 fwrite($file, $history.$log_statement);
                 
                 #Array operations
@@ -169,7 +169,7 @@
                     {
                         case "resource":
                         {
-                            $filesize = filesize("http://nchsapp.azurewebsites.net/application/users/".sha1($_COOKIE["userid"])."/docs/".$array[$i][0]);
+                            $filesize = filesize("../users/".sha1($_COOKIE["userid"])."/docs/".$array[$i][0]);
                             if(strlen($filesize) < 4)
                             {
                                 $filesize_f = $filesize." B";
@@ -178,13 +178,13 @@
                             {
                                 $filesize_f = substr($filesize, 0, 2)." MB";
                             }
-                            $files .= "<a href='http://nchsapp.azurewebsites.net/application/users/".sha1($_COOKIE["userid"])."/docs/".$array[$i][0]."'><div class='file'><h6>".$array[$i][0]."</h6><span>".$filesize_f."</span></div></a>";
+                            $files .= "<a style='text-decoration: none;' href='../users/".sha1($_COOKIE["userid"])."/docs/".$array[$i][0]."' download='".$array[$i][0]."'><div class='file'><h6>".$array[$i][0]."</h6><span>".$filesize_f."</span></div></a>";
                         }
-                        break;
                     }
                 }
+                return $files;
             }
             break;
-		}
 	}
+    }
 ?>

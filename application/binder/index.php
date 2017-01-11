@@ -20,6 +20,7 @@
 			$files_f = format($files, "dir");
 			
 			echo $files_f;
+			echo $files[0][0];
 		}
 		else
 		{
