@@ -653,9 +653,11 @@ body{
 	height: 50px;
 	margin: 0;
 	background-color: #ebebeb;
+	border: 2px solid black;
 }
 .file:hover{
 	background-color: #bbbbbb;
+	border-color: #bf1d32;
 }
 .file span{
 	float: right;

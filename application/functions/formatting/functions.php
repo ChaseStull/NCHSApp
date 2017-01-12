@@ -178,7 +178,7 @@
                             {
                                 $filesize_f = substr($filesize, 0, 2)." MB";
                             }
-                            $files .= "<a style='text-decoration: none;' href='../users/".sha1($_COOKIE["userid"])."/docs/".$array[$i][0]."' download='".$array[$i][0]."'><div class='file'><h6>".$array[$i][0]."</h6><span>".$filesize_f."</span></div></a>";
+                            $files .= "<a style='text-decoration: none;' href='../users/".sha1($_COOKIE["userid"])."/docs/".$array[$i][0]."' download='".$array[$i][0]."'><div class='file'><br><h6>".$array[$i][0]."</h6><span>".$filesize_f."</span></div></a>";
                         }
                     }
                 }

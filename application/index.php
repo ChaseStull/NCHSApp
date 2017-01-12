@@ -420,6 +420,9 @@
 										<div class='home-menu-option' onclick='location.assign(\"binder\");'>
 											Binder
 										</div>
+										<div class='home-menu-option' onclick='location.assign(\"store\");'>
+											School Store
+										</div>
 										<div class='home-menu-option'>
 						                   	Important Links
 						                    <div class='home-menu-option-content'>
@@ -550,6 +553,12 @@
 												".$group_links."
 						                    </div>
 						                </div>
+										<div class='home-menu-option' onclick='location.assign(\"binder\");'>
+											Binder
+										</div>
+										<div class='home-menu-option' onclick='location.assign(\"store\");'>
+											School Store
+										</div>
 										<div class='home-menu-option'>
 						                   	Important Links
 						                    <div class='home-menu-option-content'>
