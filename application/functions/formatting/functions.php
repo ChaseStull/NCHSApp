@@ -21,11 +21,11 @@
 				{
 					if($i == count($array)-1)
 					{
-						$links .= "<a href='?group_id=".sha1($array[$i])."'>".$array[$i]."</a>";
+						$links .= "<a href='http://nchsapp.azurewebsites.net/application/?group_id=".sha1($array[$i])."'>".$array[$i]."</a>";
 					}
 					else
 					{
-						$links .= "<a href='?group_id=".sha1($array[$i])."'>".$array[$i]."</a><div></div>";
+						$links .= "<a href='http://nchsapp.azurewebsites.net/application/?group_id=".sha1($array[$i])."'>".$array[$i]."</a><div></div>";
 					}
 				}
 				return $links;
@@ -185,6 +185,10 @@
                 return $files;
             }
             break;
-	}
+            case "item":
+            {
+                
+            }
+	   }
     }
 ?>

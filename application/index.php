@@ -227,18 +227,20 @@
 							</body>
 						</html>";
 						}
-						else
+						else if(!isset($_GET["group_id"]))
 						{
-							require("functions/group/get_group.php");
-							$group_array = get_group();
-							$group_name = $group_array[0];
-							$group_owner = $group_array[2];
-							$group_admins = $group_array[3];
-							$group_members = $group_array[4];
-							$array = $group_array[5];
-						
-							$group_posts_f = format($array, "post");
-							
+							$feed = format(get_array_from_file("users/".sha1($_COOKIE["userid"])."/feed.json", false), "post");
+							if(count($feed) == 0)
+							{
+								$feed = "<div class='post'>
+			      	        				<h3 class='post-head'>Nothing here yet</h3>
+											<p>
+												You will see posts here once you have been verified
+											</p>
+			            				</div>";
+							}
+							$group_links = format(get_array_from_file("users/".sha1($_COOKIE["userid"])."/groups.json", false), "group_link");
+							$group_options = format(get_array_from_file("users/".sha1($_COOKIE["userid"])."/groups.json", false), "group_option");
 							echo "<html>
 							<head>
 								<title>Home</title>
@@ -257,21 +259,23 @@
 								<div class='feed-and-menu-container' id='navigation'>
 									<div class='home-page-menu-container' id='menu'>
 				    					Menu
-				    					<div onclick='location.assign(\"../\");' class='home-menu-option'>
+				    					<div onclick='location.assign(\"./\");' class='home-menu-option'>
 				       						My Feed
 				    					</div>
 										<div class='home-menu-option'>
 						                   	Groups
 						                    <div class='home-menu-option-content'>
-						                        <span>Sample Group</span>
-						                        <div></div>
-						                        <span>Sample Group</span>
-						                        <div></div>
-						                        <span>Sample Group</span>
-						                        <div></div>
-						                        <span>Sample Group</span>
+												<span style='display: block;' onclick='show(\"new_group\"); hide(\"feed\");'>$nbsp+&nbspNew Group</span>
+												<div></div>
+												".$group_links."
 						                    </div>
 						                </div>
+										<div class='home-menu-option' onclick='location.assign(\"binder\");'>
+											Binder
+										</div>
+										<div class='home-menu-option' onclick='location.assign(\"store\");'>
+											School Store
+										</div>
 										<div class='home-menu-option'>
 						                   	Important Links
 						                    <div class='home-menu-option-content'>
@@ -283,9 +287,12 @@
 										<div id='feed' class='content' style='display: block;'>
 											<h2 class='content-title'>My Feed</h2>
 				                            <div class='post'>
-				                         		<form id='form' method='post' action='post.php'>
+				                         		<form id='form' method='post' action='functions/post/post.php'>
 				                                	<input type='hidden' name='type' value='post'>
-													<input type='hidden' name='group' value='".$_GET["group_id"]."'>
+													Post to 
+													<select class='post-text-box' name='group_name' style='width: 75%; float: right;' required>
+														".$group_options."
+													</select>
 													<br>
 				                                    Title
 				                                    <input type='text' class='post-text-box' name='title' required>
@@ -297,19 +304,151 @@
 				                                    <br>
 				                                </form>
 				                            </div>
-											".$group_posts_f."
-										</div>
-										<div id='grades' class='content'>
-											<iframe src='https://parentconnect.aacps.org/Login.asp' frameborder='none' class='post' style='height: 85%;'></iframe>
+											".$feed."
 										</div>
 										<div id='new_group' class='content'>
-											<form id='form' class='post' method='post' action='post.php'>
+											<h2 class='content-title'>New Group</h2>
+											<form id='form' method='post' action='functions/group/new_group.php'>
+												<br>
 			                                    Group Name
-			                                    <input type='text' class='name' name='title' required>
+			                                    <input type='text' class='post-text-box' name='name' autocomplete='no' required>
 			                                    <br>
-			                                    Message
-			                                    <textarea name='body' class='post-text-box' style='min-height: 75px;' required></textarea>
-			                                    <button class='form-submit-post'>Post</button>
+			                                    Description (Optional)
+			                                    <textarea name='description' class='post-text-box' style='min-height: 75px;'></textarea>
+			                                    <button class='form-submit-post'>Create</button>
+												<br>
+			                                    <br>
+			                                    <br>
+			                                </form>
+										</div>
+									</div>
+								</div>
+								<div class='alerts-container' id='notifications'>
+									<span>Notifications</span><br>
+									".$alerts."
+				    			</div>
+							</body>
+						</html>";
+						}
+						else
+						{
+							if(isset($_COOKIE["userid"]))
+							{
+								if((isset($_GET["group_id"])) && ($_GET["group_id"] != null) && (file_exists("groups/".$_GET["group_id"].".json")))
+								{
+									$group_array = get_array_from_file("groups/".$_GET["group_id"].".json", false);
+								}
+							}
+								
+							$group_name = $group_array[0];
+							$group_description = $group_array[2];
+							$group_owner = $group_array[3];
+							$group_admins = $group_array[4];
+							$group_members = $group_array[5];
+							$group_posts = $group_array[6];
+							$group_posts_f = format($group_posts, "post");
+							$group_links = format(get_array_from_file("users/".sha1($_COOKIE["userid"])."/groups.json", false), "group_link");
+							
+							$is_member = false;
+							$is_admin = false;
+							$is_owner = false;
+							
+							for($i = 0; $i < count($group_members); $i++)
+							{
+								if($_COOKIE["userid"] == $group_members[$i])
+								{
+									$is_member = true;
+								}
+							}
+							for($i = 0; $i < count($group_admins); $i++)
+							{
+								if($_COOKIE["userid"] == $group_admins[$i])
+								{
+									$is_admin = true;
+								}
+							}
+							if($_COOKIE["userid"] == $group_owner)
+							{
+								$is_owner = true;
+							}
+							
+							echo "<html>
+							<head>
+								<title>Home</title>
+								<link rel='stylesheet' type='text/css' href='../css/styles.css'>
+								<script src='../js/functions.js'></script>
+							</head>
+							<body class='sharp' style='overflow: hidden'>
+								<div class='header'>
+									<div class='top-nav-dropdown' onclick='showHide(\"form\");'><br><span class='header-text' style='padding-top: 0px;'>Options &blacktriangledown;</span></button>
+										<div id='form' class='sign-in-form-container'>
+											<a href='functions/login/logout.php'>Sign out</a>
+											"; if($is_admin||$is_owner)
+											{	
+												echo "<div></div>
+												<a href='groups/manage/?group_id=".$_GET["group_id"]."'>Manage group</a>";
+											}
+										echo "</div>
+									</div>
+									<span class='header-text'>Welcome, ".$user_first_name."</span>
+								</div>
+								<div class='feed-and-menu-container' id='navigation'>
+									<div class='home-page-menu-container' id='menu'>
+				    					Menu
+				    					<div onclick='location.assign(\"./\");' class='home-menu-option'>
+				       						My Feed
+				    					</div>
+										<div class='home-menu-option'>
+						                   	Groups
+						                    <div class='home-menu-option-content'>
+												".$group_links."
+						                    </div>
+						                </div>
+										<div class='home-menu-option' onclick='location.assign(\"binder\");'>
+											Binder
+										</div>
+										<div class='home-menu-option' onclick='location.assign(\"store\");'>
+											School Store
+										</div>
+										<div class='home-menu-option'>
+						                   	Important Links
+						                    <div class='home-menu-option-content'>
+						                        <a href='http://northcountyhs.org'>NCHS Website</a>
+						                    </div>
+						                </div>
+						            </div>
+									<div class='content-container' id='content'>
+										<div id='feed' class='content' style='display: block;'>
+											<h2 class='content-title'>".$group_name."</h2>
+				                            <div class='post'>
+				                         		<form id='form' method='post' action='functions/post/post.php'>
+				                                	<input type='hidden' name='type' value='post'>
+													<input type='hidden' name='group_id' value='".$_GET["group_id"]."'>
+													<br>
+				                                    Title
+				                                    <input type='text' class='post-text-box' name='title' required>
+				                                    <br>
+				                                    Message
+				                                    <textarea name='body' class='post-text-box' style='min-height: 75px;' required></textarea>
+				                                    <button class='form-submit-post'>Post</button>
+				                                    <br>
+				                                    <br>
+				                                </form>
+				                            </div>
+											<br>
+											".$group_posts_f."
+										</div>
+										<div id='new_group' class='content'>
+											<h2 class='content-title'>New Group</h2>
+											<form id='form' method='post' action='functions/group/new_group.php'>
+												<br>
+			                                    Group Name
+			                                    <input type='text' class='post-text-box' name='name' required>
+			                                    <br>
+			                                    Description (Optional)
+			                                    <textarea name='description' class='post-text-box' style='min-height: 75px;'></textarea>
+			                                    <button class='form-submit-post'>Create</button>
+												<br>
 			                                    <br>
 			                                    <br>
 			                                </form>
@@ -406,7 +545,7 @@
 								<div class='feed-and-menu-container' id='navigation'>
 									<div class='home-page-menu-container' id='menu'>
 				    					Menu
-				    					<div onclick='location.assign(\"./\");' class='home-menu-option'>
+				    					<div onclick='location.assign(\"./\");' class='home-menu-option-active'>
 				       						My Feed
 				    					</div>
 										<div class='home-menu-option'>
@@ -545,7 +684,7 @@
 				    					<div onclick='location.assign(\"./\");' class='home-menu-option'>
 				       						My Feed
 				    					</div>
-										<div class='home-menu-option'>
+										<div class='home-menu-option-active'>
 						                   	Groups
 						                    <div class='home-menu-option-content'>
 												<span style='display: block;' onclick='show(\"new_group\"); hide(\"feed\");'>$nbsp+&nbspNew Group</span>

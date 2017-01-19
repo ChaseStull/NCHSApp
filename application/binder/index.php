@@ -16,6 +16,9 @@
 			$user_account_verification_status = $user_info[7];
 			$user_account_quota_status = $user_info[8];
 			
+			
+			$group_links = format(get_array_from_file("../users/".sha1($_COOKIE["userid"])."/groups.json", false), "group_link");
+			
 			$files = get_array_from_file("../users/".sha1($user_info[0])."/docs/dir.json");
 			$files_f = format($files, "dir");
 			
@@ -38,8 +41,26 @@
 						<div class='home-page-menu-container' id='menu' style='width: 20%;'>
 	    					Menu
 	    					<div onclick='location.assign(\"../\");' class='home-menu-option'>
-	       						Home
+	       						My Feed
 	    					</div>
+							<div class='home-menu-option'>
+			                   	Groups
+			                    <div class='home-menu-option-content'>
+									".$group_links."
+			                    </div>
+			                </div>
+							<div class='home-menu-option-active' onclick='location.assign(\"binder\");'>
+								Binder
+							</div>
+							<div class='home-menu-option' onclick='location.assign(\"../store\");'>
+								School Store
+							</div>
+							<div class='home-menu-option'>
+			                   	Important Links
+			                    <div class='home-menu-option-content'>
+			                        <a href='http://northcountyhs.org'>NCHS Website</a>
+			                    </div>
+			                </div>
 			            </div>
 						<div class='content' style='display: block; width: 79%; margin-left: 20%; margin-right: auto; padding-right: 1%;'>
 							".$files_f."

@@ -15,8 +15,8 @@
 						<div id='register-button' class='tab-general' style='float: right;' onclick='show("register"); hide("login"); document.getElementById("register-button").style.backgroundColor = "lightslategray"; document.getElementById("login-button").style.backgroundColor = "white";'>Register</div>
 					</div>
 					<br>
-					<form id='login' method='post' action='login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
-						<input type='text' name='email' placeholder='Email' class='user-input'>
+					<form id='login' method='post' action='application/functions/login/login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
+						<input type='text' name='username' placeholder='username' class='user-input'>
 						<br>
 						<br> 
 						<input type='password' name='password' placeholder='Password' class='user-input'>
@@ -24,29 +24,38 @@
 						<br>
 						<input type='submit' value='Sign In' class='form-submit'>
 					</form>
-					<form id='register' method='post' action='register.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
-						<input type='text' name='email' placeholder='Enter Your Email Address' class='user-input'>
+					<form id='register' method='post' action='application/functions/login/new_user.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
+						<input type='text' name='username' placeholder='Choose a username' class='user-input' required>
 						<br>
 						<br>
-						<input type='password' name='password' placeholder='Choose A Password' class='user-input'>
+						<input type='password' name='password' placeholder='Choose a password' class='user-input' required>
 						<br>
 						<br>
-						<input type='password' name='password_confirm' placeholder='Confirm Your Password' class='user-input'>
+						<input type='password' name='passwordc' placeholder='Confirm your password' class='user-input' required>
 						<br>
 						<br>
-						<input type='text' name='first_name' placeholder='First Name' class='user-input'>
+						<input type='text' name='firstn' placeholder='First name' class='user-input' required>
 						<br>
 						<br>
-						<input type='text' name='Last_name' placeholder='Last Name' class='user-input'>
+						<input type='text' name='lastn' placeholder='Last name' class='user-input' required>
 						<br>
 						<br>
-						<input id='id' type='text' name='student_id_number' placeholder='Student ID Number' class='user-input'>
+						<select class='user-input' name='acc_type' required>
+							<option value='student'>Student</option>
+							<option value='teacher'>Teacher</option>
+						</select>
+						<br>
+						<br>
+						<input id='id' type='text' name='quote' placeholder='Quote (optional)' class='user-input'>
+						<br>
+						<br>
+						<input type='submit' value='Register' class='form-submit'>
 					</form>
 				</div>
 			</button>
 			<a class='spacer' href=''><span class='header-text' style='padding-top: 38px;'></span></a>
 			<a class='top-nav-link' href='../application'><span class='header-text' style='padding-top: 38px;'>Portal</span></a>
-			<a class='top-nav-link' href='/features'><span class='header-text' style='padding-top: 38px;'>Features</span></a>
+			<a class='top-nav-link' href='/help'><span class='header-text' style='padding-top: 38px;'>Help</span></a>
 			<a class='top-nav-link' style='background-color: #bf1d32;' href='/about'><span class='header-text' style='padding-top: 38px;'>About</span></a>
 			<a class='top-nav-link' href='../'><span class='header-text' style='padding-top: 38px;'>Home</span></a>
 		</div>

@@ -73,8 +73,9 @@
     z-index: 3;
 	right: 0;
 	height: auto;
-	max-height: 500px;
+	max-height: 80vh;
 	top: 100%;
+	overflow: auto;
 }
 .sign-in-form-container a{
 	display: block;
@@ -287,12 +288,10 @@ body{
 .alerts-container{
 	font-family: Helvetica;
 	width: 25%;
-	height: auto;
-	max-height: 85%;
 	float: right;
 	background-color: white;
 	color: #333333;
-	height: 800px;
+	height: 90vh;
 	text-align: center;
 	overflow: auto;
 	margin-top: 100px;
@@ -395,12 +394,24 @@ body{
     position: relative;
 	padding: 3px;
 }
-.home-menu-option:hover{
+.home-menu-option:hover, .home-menu-option-active:hover{
     background-color:  white;
     border:  1px solid #bf1d32;
     color:  #bf1d32;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+}
+.home-menu-option-active{
+	width: 90%;
+    background-color:  white;
+	border:  1px solid #bf1d32;
+    color:  #bf1d32;
+    border-radius: 5px;
+    height: auto;
+    padding: 5px;
+	margin-top: 10px;
+    position: relative;
+	padding: 3px;
 }
 .home-menu-option-content{
     position:  absolute;
@@ -434,7 +445,7 @@ body{
 	background-color: white;
 	width: 100%;
 }
-.home-menu-option:hover .home-menu-option-content{
+.home-menu-option:hover .home-menu-option-content, .home-menu-option-active:hover .home-menu-option-content{
     display:  block;
 }
 .content-container{
@@ -667,4 +678,58 @@ body{
 .file h6{
 	font-size: 20px;
 	display: inline;
+}
+.item{
+	padding: 2px;
+	background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	border-radius: 10px;
+	color: black;
+	display: inline-block;
+	/*margin-bottom: 10px;*/
+}
+.item:hover{
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+}
+.item h5{
+	text-align: center;
+	display: inline-block;
+}
+.item img{
+	max-width: 90%;
+	height: auto;
+	margin-left: 5%;
+	margin-right: auto;
+}
+.item p{
+	padding: 5px 20px 20px 20px;
+	font-size: small;
+}
+.button-bar{
+	width: 98%;
+	height: 50px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 10px 10px 10px;
+	background-color: darkgray;
+	border-radius: 10px;
+	overflow: auto;
+}
+.category{
+	min-width: 100px;
+	max-width: 200px;
+	width: auto;
+	height: auto;
+	padding: 15px 2px 15px 2px;
+	margin-left: 2px;
+	margin-left: 2px; 
+	background-color: white;
+	border-radius: 10px;
+	text-align: center;
+	display: inline-block;
+	border: 0px solid #bf1d32;
+}
+.category:hover{
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
 }

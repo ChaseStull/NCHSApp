@@ -46,6 +46,7 @@
 			{
 				$student_id_number = $_POST["student_id_number"];
 				$user_info[6] = $student_id_number;
+				$user_info[7] = true;
 				write_array(sha1($_COOKIE["userid"]).".json", $user_info);
 				echo "<script>onload = location.assign(\"../..\");</script>";
 			}

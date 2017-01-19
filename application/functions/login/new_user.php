@@ -1,5 +1,5 @@
 <?php
-	require("../filesystem/json.php");
+	include("../filesystem/json.php");
 
 	$username = $_POST["username"];
 	$password = sha1($_POST["password"]);
@@ -7,7 +7,7 @@
 	$first_name = $_POST["firstn"];
 	$last_name = $_POST["lastn"];
 	$acc_type = $_POST["acc"];
-	if($_POST["quote"] != null)
+	if(isset($_POST["quote"]))
 	{
 		$quote = $_POST["quote"];
 	}
@@ -40,11 +40,11 @@
 			mkdir($user_root."/docs");
 			
 			//Initialize docs directory tracking
-			$file = fopen($user_root."/docs/dir.json");
-			$fwrite($file, "[]");
+			$file = fopen($user_root."/docs/dir.json", "w");
+			fwrite($file, "[]");
 			fclose($file);
-			$file = fopen($user_root."/docs/log.dir");
-			fclose($file);
+			$file1 = fopen($user_root."/docs/log.dir", "w");
+			fclose($file1);
 			
 			//Create user feed file
 			$feed = fopen($user_root."/feed.json", "w");

@@ -34,6 +34,7 @@
 		if($is_admin||$is_owner)
 		{
 			$teacher_options_f = format(array(get_array_from_file("../../users/master.json", false)[0], $group_members), "member_option");
+			$teacher_options_f = format(array(get_array_from_file("../../users/master.json", false)[0], $group_members), "member_option");
 			$student_options_f = format(array(get_array_from_file("../../users/master.json", false)[1], $group_members), "member_option");
 			$group_members_f = format($group_members, "member_info_block");
 			echo "<html>
@@ -87,7 +88,7 @@
 							<div id='members' class='content' style='display: block;'>
 								Members
 								<div class='post'>";
-										if(($teacher_options_f != ""&&$teacher_options_f != null)||($student_options_f != ""&&$student_options_f != null))
+										if(($teacher_options_f != "" && $teacher_options_f != null)||($student_options_f != "" && $student_options_f != null))
 										{
 											echo "<div class='member-info-block'>
 												<span>Add Member</span>

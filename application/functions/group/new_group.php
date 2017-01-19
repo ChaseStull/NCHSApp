@@ -8,7 +8,7 @@
 		$owner = $_COOKIE["userid"];
 		$administrators = array($owner);
 		$members = array($owner);
-		$posts = array(array("System","Welcome", "post", "Welcome to your new group. You can add members and manage administrators in the \"Manage Group\" menu", null));
+		$posts = array(array("System","Welcome", "post", "Welcome to your new group. If you are an administrator, you can add members and manage administrators in the \"Manage Group\" menu", null));
 		$group_array = array($name, $group_id, $group_description, $owner, $administrators, $members, $posts);
 		
 		
