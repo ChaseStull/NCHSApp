@@ -48,6 +48,11 @@
 				$user_info[6] = $student_id_number;
 				$user_info[7] = true;
 				write_array(sha1($_COOKIE["userid"]).".json", $user_info);
+				
+				$master = get_array_from_file("master.json", false);
+				array_push($master[1], $user_info[0]);
+				write_array("master.json", $master);
+				
 				echo "<script>onload = location.assign(\"../..\");</script>";
 			}
 			else

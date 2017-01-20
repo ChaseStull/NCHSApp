@@ -1,12 +1,14 @@
 <?php
 	include("../filesystem/json.php");
+	
+	echo "<img src='../../../img/Loading_icon.gif' style='margin-top: 25%; margin-left: auto; margin-right: auto;'>";
 
 	$username = $_POST["username"];
 	$password = sha1($_POST["password"]);
 	$match = sha1($_POST["passwordc"]);
 	$first_name = $_POST["firstn"];
 	$last_name = $_POST["lastn"];
-	$acc_type = $_POST["acc"];
+	$acc = $_POST["acc"];
 	if(isset($_POST["quote"]))
 	{
 		$quote = $_POST["quote"];

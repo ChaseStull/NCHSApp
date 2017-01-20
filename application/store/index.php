@@ -23,9 +23,11 @@
 				<script>
 					$(document).ready(function(){
 						$(\".category\").mouseenter(function(){
-							$(this).animate({borderWidth: \"1px\"});
-							$(this).mouseleave(function(){
-								$(this).animate({borderWidth: \"0px\"});
+							$(this).mousedown(function(){
+								$(this).style(\"borderWidth: 1px;\");
+								$(this).mouseup(function(){
+									$(this).style(\"borderWidth: 0;\");
+								});
 							});
 						});
 					});

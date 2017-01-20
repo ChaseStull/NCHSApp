@@ -49,7 +49,7 @@
 									".$group_links."
 			                    </div>
 			                </div>
-							<div class='home-menu-option-active' onclick='location.assign(\"binder\");'>
+							<div class='home-menu-option-active' onclick='location.assign(\"\");'>
 								Binder
 							</div>
 							<div class='home-menu-option' onclick='location.assign(\"../store\");'>

@@ -86,6 +86,9 @@
 			        					Grades
 			        				</div>
 									<div class='home-menu-option'>
+										Binder
+									</div>
+									<div class='home-menu-option'>
 					                   	Groups
 					                    <div class='home-menu-option-content'>
 					                        <span>You haven't been added to any groups yet</span>
@@ -173,18 +176,24 @@
 				    					<div onclick='location.assign(\"../\");' class='home-menu-option'>
 				       						My Feed
 				    					</div>
-				    					<div onclick='show(\"grades\"); hide(\"feed\"); hide(\"notifications\"); resize(0);' class='home-menu-option'>
-				        					Grades
-				            				<div class='home-menu-option-content'>
-				                				<span>New Link</span>
-				            				</div>
-				        				</div>
 										<div class='home-menu-option'>
 						                   	Groups
 						                    <div class='home-menu-option-content'>
 						                        ".$group_links."
 						                    </div>
 						                </div>
+										<div class='home-menu-option' onclick='location.assign(\"binder/\");'>
+											Binder
+										</div>
+				    					<div onclick='show(\"grades\"); hide(\"feed\"); hide(\"notifications\"); resize(0);' class='home-menu-option'>
+				        					Grades
+				            				<div class='home-menu-option-content'>
+				                				<span>New Link</span>
+				            				</div>
+				        				</div>
+										<div class='home-menu-option' onclick='location.assign(\"store/\");'>
+											School Store
+										</div>
 										<div class='home-menu-option'>
 						                   	Important Links
 						                    <div class='home-menu-option-content'>
@@ -503,6 +512,13 @@
 								$user_info[7] = true;
 								$user_info[6] = $user_info[1];
 								write_array( "users/".sha1($user_id).".json", $user_info);
+								
+								#Add teacher to the master list
+								$master = get_array_from_file("users/master.json", false);
+								array_push($master[0], $user_info[0]);
+								write_array("users/master.json", $master);
+								
+								#Return html
 								echo "<script>onload = location.assign(\"./\");</script>";
 							}
 							else

@@ -16,7 +16,7 @@
 	</head>
 	<body class='sharp' style='overflow: auto;'>
 		<div class='header' style='margin-top: -100px;'> 
-			<span class='header-text'>North County High School App</span>
+			<span class='header-text'>North County High School</span>
 			<div class='top-nav-dropdown' onclick='showHide("form");'><span class='header-text' style='padding-top: 0px;'><br>Sign In &blacktriangledown;</span></div>
 				<div id='form' class='sign-in-form-container' style='overflow: auto;'>
 					<div class='tab-general-container'>
@@ -49,7 +49,7 @@
 						<input type='text' name='lastn' placeholder='Last name' class='user-input' required>
 						<br>
 						<br>
-						<select class='user-input' name='acc_type' required>
+						<select class='user-input' name='acc' required>
 							<option value='student'>Student</option>
 							<option value='teacher'>Teacher</option>
 						</select>
