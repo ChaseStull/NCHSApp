@@ -187,7 +187,11 @@
             break;
             case "item":
             {
-                
+                $items = "";
+                for($i = 0; $i < count($array); $i++)
+                {
+                    $item .= "<div class='item'><img src='".$array[$i][3]."'><h4>".$array[$i][0]."</h4><h5>".$array[$i][2]."</h5><p>".$array[$i][2]."</p></div>";
+                }
             }
 	   }
     }

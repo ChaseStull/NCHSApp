@@ -74,12 +74,12 @@
 			if($acc_type == "student")
 			{
 				array_push($master_user_list[1], $username);
+				write_array("../../users/master.json", $master_user_list);
 			}
 			else if($acc_type == "teacher")
 			{
 				array_push($master_user_list[0], $username);
 			}
-			write_array("../../users/master.json", $master_user_list);
 			
 			setcookie("userid", $username, 86400, "/");
 			

@@ -777,3 +777,5 @@
 		echo "<script>onload = location.assign(\"functions/login\");</script>";
 	}
 ?>
+<meta name='description' content='Web app for North County High School'>
+<meta name='keywords' content='NCHS,NCHSApp,North County App,North County High School,app,'>

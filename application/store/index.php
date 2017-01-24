@@ -18,7 +18,7 @@
 			<head>
 				<title>Home</title>
 				<link rel='stylesheet' type='text/css' href='../../../css/styles.css'>
-				<script src='../js/functions.js'></script>
+				<script src='../../../js/functions.js'></script>
 				<script src='../../js/jquery-3.1.1.min.js'></script>
 				<script>
 					$(document).ready(function(){
@@ -72,25 +72,13 @@
 							<h2 class='content-title'>Categories</h2>
 							<div class='button-bar'>
 								<div class='category'>
-									G
+									Apparel
 								</div>
 								<div class='category'>
-									H
+									Accesories
 								</div>
 								<div class='category'>
-									G
-								</div>
-								<div class='category'>
-									H
-								</div>
-								<div class='category'>
-									G
-								</div>
-								<div class='category'>
-									H
-								</div>
-								<div class='category'>
-									G
+									Food
 								</div>
 							</div>
 							".format(array(get_array_from_file("items.json", false), $_GET["type"]), "item")."
