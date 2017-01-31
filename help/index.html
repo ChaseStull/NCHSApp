@@ -2,7 +2,7 @@
 	<head>
 		<title>NCHS</title>
 		<link rel='stylesheet' type='text/css' href='../css/styles.css'>
-		<script></script>
+		<script src='../js/functions.js'></script>
 		<meta name='viewport' content='width=device-width'>
 	</head>
 	<body class='sharp' style='overflow: auto;'>
@@ -11,12 +11,12 @@
 			<div class='top-nav-dropdown' onclick='showHide("form");'><span class='header-text' style='padding-top: 0px;'><br>Sign In &blacktriangledown;</span></div>
 				<div id='form' class='sign-in-form-container'>
 					<div class='tab-general-container'>
-						<div id='login-button' class='tab-general' style='float: left; background-color: lightslategrey;' onclick='show("login"); hide("register"); document.getElementById("login-button").style.backgroundColor = "lightslategray"; document.getElementById("register-button").style.backgroundColor = "white";'><p>Sign In</p></div>
-						<div id='register-button' class='tab-general' style='float: right;' onclick='show("register"); hide("login"); document.getElementById("register-button").style.backgroundColor = "lightslategray"; document.getElementById("login-button").style.backgroundColor = "white";'><p>Register</p></div>
+						<div id='login-button' class='tab-general' style='float: left; background-color: lightslategrey;' onclick='show("login"); hide("register"); document.getElementById("login-button").style.backgroundColor = "lightslategray"; document.getElementById("register-button").style.backgroundColor = "white";'>Sign In</div>
+						<div id='register-button' class='tab-general' style='float: right;' onclick='show("register"); hide("login"); document.getElementById("register-button").style.backgroundColor = "lightslategray"; document.getElementById("login-button").style.backgroundColor = "white";'>Register</div>
 					</div>
 					<br>
-					<form id='login' method='post' action='login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
-						<input type='text' name='email' placeholder='Email' class='user-input'>
+					<form id='login' method='post' action='../application/functions/login/login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
+						<input type='text' name='username' placeholder='Email' class='user-input'>
 						<br>
 						<br> 
 						<input type='password' name='password' placeholder='Password' class='user-input'>
@@ -24,23 +24,32 @@
 						<br>
 						<input type='submit' value='Sign In' class='form-submit'>
 					</form>
-					<form id='register' method='post' action='register.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
-						<input type='text' name='email' placeholder='Enter Your Email Address' class='user-input'>
+					<form id='register' method='post' action='../application/functions/login/new_user.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
+						<input type='text' name='username' placeholder='Choose a username' class='user-input' required>
 						<br>
 						<br>
-						<input type='password' name='password' placeholder='Choose A Password' class='user-input'>
+						<input type='password' name='password' placeholder='Choose a password' class='user-input' required>
 						<br>
 						<br>
-						<input type='password' name='password_confirm' placeholder='Confirm Your Password' class='user-input'>
+						<input type='password' name='passwordc' placeholder='Confirm your password' class='user-input' required>
 						<br>
 						<br>
-						<input type='text' name='first_name' placeholder='First Name' class='user-input'>
+						<input type='text' name='firstn' placeholder='First name' class='user-input' required>
 						<br>
 						<br>
-						<input type='text' name='Last_name' placeholder='Last Name' class='user-input'>
+						<input type='text' name='lastn' placeholder='Last name' class='user-input' required>
 						<br>
 						<br>
-						<input id='id' type='text' name='student_id_number' placeholder='Student ID Number' class='user-input'>
+						<select class='user-input' name='acc_type' required>
+							<option value='student'>Student</option>
+							<option value='teacher'>Teacher</option>
+						</select>
+						<br>
+						<br>
+						<input id='id' type='text' name='quote' placeholder='Quote (optional)' class='user-input'>
+						<br>
+						<br>
+						<input type='submit' value='Register' class='form-submit'>
 					</form>
 				</div>
 				<a class='spacer' href=''><span class='header-text' style='padding-top: 38px;'></span></a>

@@ -15,8 +15,8 @@
 						<div id='register-button' class='tab-general' style='float: right;' onclick='show("register"); hide("login"); document.getElementById("register-button").style.backgroundColor = "lightslategray"; document.getElementById("login-button").style.backgroundColor = "white";'>Register</div>
 					</div>
 					<br>
-					<form id='login' method='post' action='application/functions/login/login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
-						<input type='text' name='username' placeholder='username' class='user-input'>
+					<form id='login' method='post' action='../application/functions/login/login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
+						<input type='text' name='username' placeholder='Username' class='user-input'>
 						<br>
 						<br> 
 						<input type='password' name='password' placeholder='Password' class='user-input'>
@@ -24,7 +24,7 @@
 						<br>
 						<input type='submit' value='Sign In' class='form-submit'>
 					</form>
-					<form id='register' method='post' action='application/functions/login/new_user.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
+					<form id='register' method='post' action='../application/functions/login/new_user.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
 						<input type='text' name='username' placeholder='Choose a username' class='user-input' required>
 						<br>
 						<br>
