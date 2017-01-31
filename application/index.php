@@ -246,6 +246,7 @@
 											<p>
 												You will see posts here once you have been verified
 											</p>
+											
 			            				</div>";
 							}
 							$group_links = format(get_array_from_file("users/".sha1($_COOKIE["userid"])."/groups.json", false), "group_link");

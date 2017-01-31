@@ -188,9 +188,21 @@
             case "item":
             {
                 $items = "";
-                for($i = 0; $i < count($array); $i++)
+                if(!isset($array[1]))
                 {
-                    $item .= "<div class='item'><img src='".$array[$i][3]."'><h4>".$array[$i][0]."</h4><h5>".$array[$i][2]."</h5><p>".$array[$i][2]."</p></div>";
+                    for($i = 0; $i < count($array[0]); $i++)
+                    {
+                        $items .= "<div class='item'><img src='".$array[0][$i][4]."'><h4>".$array[0][$i][0]."</h4><h5>".$array[0][$i][2]."</h5><p>".$array[0][$i][3]."</p></div>";
+                        if(($i + 1) % 4 == 0)
+                        {
+                            $items .= "<br><br><br>";
+                        }
+                        if($i == count($array[0]) - 1)
+                        {
+                            $items .= "<br><br><br>";
+                        }
+                    }
+                    return $items;
                 }
             }
 	   }

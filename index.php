@@ -102,9 +102,9 @@
 			</div>
 			<div style='width: 30%; float: right; margin-right: 2.5%;'>
 				<div class='text-container'>
-					<h1 onclick='location.assign("/features");'>New Features</h1>
+					<h1 onclick='location.assign("/help");'>Help Center</h1>
 					<p>
-						Check out the new features available from the app. We&#39;ve got loads to tell you about!
+						Visit the Help Center for tuorials and websie assistance.
 					</p>
 				</div>
 			</div>
