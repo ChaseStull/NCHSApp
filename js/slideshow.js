@@ -1,3 +1,4 @@
+/* global img_height_px */
 var slide = 0;
 var slides = document.getElementsByClassName("slide");
 function switch_slide(number_of_slides)
@@ -44,6 +45,7 @@ function hide_slides()
 			console.log("Image height adjusted");
 		}
 	}
+	set_margins();
 }
 function getHeight(src)
 {
@@ -59,7 +61,7 @@ function set_margins()
 		var img_height = getHeight(slides[i].firstElementChild.getAttribute("src"));
 		console.log("Slide "+i+": height = "+img_height);
 		img_height += 0;
-		//var img_height = img_height_px.substr(-2, 0);
+		var img_height = Number(img_height_px);
 		var container_height = 400;
 		if(img_height < container_height)
 		{

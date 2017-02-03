@@ -48,6 +48,8 @@
 						<div class='top-nav-dropdown' onclick='showHide(\"form\");'><br><span class='header-text' style='padding-top: 0px;'>Options &blacktriangledown;</span></button>
 							<div id='form' class='sign-in-form-container'>
 								<a href='../../functions/login/logout.php'>Sign out</a>
+								<div></div>
+								<a href='add_application/?group_id=".$_GET["group_id"]."'>Add External Application</a>
 								"; if($is_owner)
 								{	
 									echo "<div></div>
@@ -66,8 +68,6 @@
 							<div class='home-menu-option'>
 			                   	Groups
 			                    <div class='home-menu-option-content'>
-									<span style='display: block;' onclick='show(\"new_group\"); hide(\"feed\");'>$nbsp+&nbspNew Group</span>
-									<div></div>
 									".$group_links."
 			                    </div>
 			                </div>

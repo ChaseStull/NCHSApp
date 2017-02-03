@@ -649,6 +649,7 @@
 							$group_admins = $group_array[4];
 							$group_members = $group_array[5];
 							$group_posts = $group_array[6];
+							$group_apps = $group_array[7];
 							$group_posts_f = format($group_posts, "post");
 							$group_links = format(get_array_from_file("users/".sha1($_COOKIE["userid"])."/groups.json", false), "group_link");
 							
@@ -674,6 +675,7 @@
 							{
 								$is_owner = true;
 							}
+							$group_apps_f = format($group_apps, "link");
 							
 							echo "<html>
 							<head>
@@ -714,6 +716,12 @@
 										</div>
 										<div class='home-menu-option' onclick='location.assign(\"store\");'>
 											School Store
+										</div>
+										<div class='home-menu-option'>
+											Apps / Links
+											<div class='home-menu-option-content'>
+												".$group_apps_f."
+											</div>
 										</div>
 										<div class='home-menu-option'>
 						                   	Important Links
