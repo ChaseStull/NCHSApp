@@ -188,13 +188,16 @@
 }
 .slide-image{
 	display: block;
-	max-height: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: auto;
 	padding-bottom: auto;
 	width: 100%;
-	margin: auto;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .slide{
 	width: 100%;
