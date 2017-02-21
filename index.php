@@ -69,25 +69,29 @@
 			<a class='top-nav-link' style='background-color: #bf1d32;' href='../'><span class='header-text' style='padding-top: 38px;'>Home</span></a>
 		</div>
 		<div class='slideshow-container'>
-			<div id='2' class='slide' style='display: block;'>
-				<img id='image2' src='img/nclogo.jpg' height='auto' width="auto" class='slide-image'>
-				<span class='slide-caption'>North County Logo</span>
-			</div>
-			<div id='3' class='slide'>
-				<img id='image3' src='img/north-county-hs-5.jpg' class='slide-image'>
+			<div id='2' class='slide'>
+				<img id='image2' src='img/north-county-hs-5.jpg' class='slide-image'>
 				<span class='slide-caption'>New Gym</span>
 			</div>
-			<div id='4' class='slide'>
-				<img id='image4' src='img/north-county-hs-6.jpg' class='slide-image'>
+			<div id='3' class='slide'>
+				<img id='image3' src='img/north-county-hs-6.jpg' class='slide-image'>
 				<span class='slide-caption'>Sports Awards</span>
 			</div>
-			<div id='5' class='slide'>
-				<img id='image5' src='img/1293383640_orig.png' class='slide-image'>
+			<div id='4' class='slide'>
+				<img id='image4' src='img/1293383640_orig.png' class='slide-image'>
 				<span class='slide-caption'>NCHS Music Presents - Disney: Concert Under the Stars</span>
+			</div>
+			<div id='5' class='slide'>
+				<img id='image5' src='img/TrackPanorama.jpeg' class='slide-image'>
+				<span class='slide-caption'>Regional Track Meet Spring 2016</span>
 			</div>
 			<div id='6' class='slide'>
 				<img id='image6' src='img/TrackPanorama.jpeg' class='slide-image'>
 				<span class='slide-caption'>Regional Track Meet Spring 2016</span>
+			</div>
+			<div id='7' class='slide'>
+				<img id='image7' src='img/IMG_1535.PNG' class='slide-image'>
+				<span class='slide-caption'>Pole-vaulter Chase Stull placing 2nd in the region</span>
 			</div>
 		</div>
 		<div class='horizontal-container'>
