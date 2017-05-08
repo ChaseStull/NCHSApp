@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>NCHS</title>
+		<link rel='stylesheet' type='text/css' href='../css/styles.css'>
+		<script src='../js/functions.js'></script>
+		<meta name='viewport' content='width=device-width'>
+	</head>
+	<body class='sharp' style='overflow: auto;'>
+		<div class='header'> 
+			<span class='header-text'>Welcome to the Help Center</span>
+			<div class='top-nav-dropdown' onclick='showHide("form");'><span class='header-text' style='padding-top: 0px;'><br>Sign In &blacktriangledown;</span></div>
+				<div id='form' class='sign-in-form-container'>
+					<div class='tab-general-container'>
+						<div id='login-button' class='tab-general' style='float: left; background-color: lightslategrey;' onclick='show("login"); hide("register"); document.getElementById("login-button").style.backgroundColor = "lightslategray"; document.getElementById("register-button").style.backgroundColor = "white";'>Sign In</div>
+						<div id='register-button' class='tab-general' style='float: right;' onclick='show("register"); hide("login"); document.getElementById("register-button").style.backgroundColor = "lightslategray"; document.getElementById("login-button").style.backgroundColor = "white";'>Register</div>
+					</div>
+					<br>
+					<form id='login' method='post' action='../application/functions/login/login.php' class='sign-in-form' style='background-color: lightslategray; line-height: 50%;'>
+						<input type='text' name='username' placeholder='Email' class='user-input'>
+						<br>
+						<br> 
+						<input type='password' name='password' placeholder='Password' class='user-input'>
+						<br>
+						<br>
+						<input type='submit' value='Sign In' class='form-submit'>
+					</form>
+					<form id='register' method='post' action='../application/functions/login/new_user.php' class='sign-in-form' style='display: none; lightslategray; line-height: 50%;'>
+						<input type='text' name='username' placeholder='Choose a username' class='user-input' required>
+						<br>
+						<br>
+						<input type='password' name='password' placeholder='Choose a password' class='user-input' required>
+						<br>
+						<br>
+						<input type='password' name='passwordc' placeholder='Confirm your password' class='user-input' required>
+						<br>
+						<br>
+						<input type='text' name='firstn' placeholder='First name' class='user-input' required>
+						<br>
+						<br>
+						<input type='text' name='lastn' placeholder='Last name' class='user-input' required>
+						<br>
+						<br>
+						<select class='user-input' name='acc_type' required>
+							<option value='student'>Student</option>
+							<option value='teacher'>Teacher</option>
+						</select>
+						<br>
+						<br>
+						<input id='id' type='text' name='quote' placeholder='Quote (optional)' class='user-input'>
+						<br>
+						<br>
+						<input type='submit' value='Register' class='form-submit'>
+					</form>
+				</div>
+				<a class='spacer' href=''><span class='header-text' style='padding-top: 38px;'></span></a>
+				<a class='top-nav-link' href='../application'><span class='header-text' style='padding-top: 38px;'>Portal</span></a>
+				<a class='top-nav-link' style='background-color: #bf1d32;' href='/help'><span class='header-text' style='padding-top: 38px;'>Help</span></a>
+				<a class='top-nav-link' href='/about'><span class='header-text' style='padding-top: 38px;'>About</span></a>
+				<a class='top-nav-link' href='../'><span class='header-text' style='padding-top: 38px;'>Home</span></a>
+			</div>
+			<br>
+			<br>
+			<div id='help-content' class='content' style='display: block;'>
+				<a href='/help/create-an-account'><div class='item'>Creating an account</div></a>
+			</div>
+		</div>
+	</body>
+</html>
