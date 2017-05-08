@@ -1,0 +1,53 @@
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'authentication/style.css' %}">
+        <title>NCHS | Login</title>
+    </head>
+    <body>
+        <div class="nav-bar">
+            <a href="../../"><br><br><br>Home</a>
+            <a href=""><br><br><br>Info</a>
+            <a href=""><br><br><br>Help</a>
+            <a href=""><br><br><br>Portal</a>
+        </div>
+        {% if type == "login" %}
+            <form method="post" action="/auth/login/">
+                {% csrf_token %}
+                <div class="eMessage">{{ eMessage }}</div>
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+                <input type="submit" value="Login">
+            </form>
+        {% elif type == "new" %}
+            <form>
+                {% csrf_token %}
+                <div class="eMessage">{{ eMessage }}</div>
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+                <label for="password_confirm">Confirm your password</label>
+                <input id="password_confirm" type="password" name="password_confirm">
+                <label for="firstName">First name</label>
+                <input id="firstName" type="text" name="firstName">
+                <label for="lastName">Last name</label>
+                <input id="lastName" type="text" name="lastName">
+                <input type="submit" value="Register">
+            </form>
+        {% else %}
+            <form method="post" action="/auth/login/">
+                {% csrf_token %}
+                <div class="eMessage">{{ eMessage }}</div>
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+                <input type="submit" value="Login">
+            </form>
+        {% endif %}
+    </body>
+</html>
